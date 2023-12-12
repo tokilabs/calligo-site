@@ -2,6 +2,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://calligo.com.br',
-  base: '/',
+  site: 'https://preview.calligo.com.br',
 });
