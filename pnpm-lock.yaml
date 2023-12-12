@@ -40,6 +40,9 @@ devDependencies:
   dts-gen:
     specifier: ^0.7.3
     version: 0.7.3
+  jquery:
+    specifier: ^3.7.1
+    version: 3.7.1
   postcss-cli:
     specifier: ^11.0.0
     version: 11.0.0(postcss@8.4.32)
@@ -3644,6 +3647,10 @@ packages:
   /jpeg-js@0.4.4:
     resolution: {integrity: sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==}
     dev: false
+
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
+    dev: true
 
   /js-base64@2.1.9:
     resolution: {integrity: sha512-f+5mYh8iF7FlF7zgmj/yqvvYQUHI0kAxGiLjIfNxZzqJ7RQNc4sjgp8crVJw0Kzv2O6aFGZWgMTnO71I9utHSg==}

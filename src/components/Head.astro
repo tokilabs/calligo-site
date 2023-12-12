@@ -15,7 +15,6 @@ const { title, description } = Astro.props;
   <title>{title ? `${title} - Calligo` : 'Calligo'}</title>
   <meta name="description" content={description} />
 
-  <link rel="stylesheet" href="/src/styles/vendors.scss" />
   <link rel="stylesheet" href="/src/styles/app/main.scss" />
 
   <!-----
@@ -28,8 +27,8 @@ const { title, description } = Astro.props;
   />
   <script
     src="https://kit.fontawesome.com/491335a88c.js"
-    crossorigin="anonymous"
-  ></script>
+    crossorigin="anonymous">
+  </script>
 </head>
 
 <!-- 

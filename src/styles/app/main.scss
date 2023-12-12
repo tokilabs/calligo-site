@@ -1,17 +1,19 @@
 //utilities
-@import "utils/reset.scss";
-@import "utils/colors.scss";
-@import "utils/mixins.scss";
-@import "utils/fonts.scss";
-@import "utils/breakpoints.scss";
+@import 'utils/reset.scss';
+@import 'utils/colors.scss';
+@import 'utils/mixins.scss';
+@import 'utils/fonts.scss';
+@import 'utils/breakpoints.scss';
 
-@import "utils/bs-overrides.scss";
+@import 'utils/bs-overrides.scss';
 
-@import "utils/bootstrap/bootstrap.scss";
+@import 'utils/bootstrap/bootstrap.scss';
 
 //global styles
-@import "globals/globals.scss";
-@import "globals/typography.scss";
+@import 'globals/globals.scss';
+@import 'globals/typography.scss';
 
-@import "components/__all.scss";
-@import "pages/__all.scss";
+@import 'components/__all.scss';
+@import 'pages/__all.scss';
+
+@import '../vendors';
