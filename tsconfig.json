@@ -1,3 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "rootDir": "./src"
+  },
+  "include": [
+    "./src/env.d.ts"
+  ]
 }

@@ -1,0 +1,311 @@
+.btn-attendance {
+  margin-right: 10px;
+}
+
+#profile-page {
+  background-color: #f0eef9;
+
+  .profile-header {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url('/src/assets/img/profile_bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: left;
+
+    .profile-header-container {
+      width: 80%;
+      margin: 0 auto;
+
+      .user-photo {
+        overflow: hidden;
+        border-radius: 100%;
+        max-width: 85%;
+        position: relative;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .profile-name-container {
+        margin-bottom: 5vw;
+
+        .profile-name {
+          @include typoConfiguration(48, 1.2, left, -0.01em);
+          color: #fff;
+          margin-bottom: 0;
+        }
+      }
+
+      .cat-title {
+        margin-bottom: 10px;
+      }
+
+      .icon-container {
+        width: 100%;
+        position: relative;
+
+        img {
+          max-width: 95%;
+        }
+      }
+
+      .chat_button {
+        margin-right: 10px;
+        background-color: #fff;
+        color: $primary;
+      }
+    }
+  }
+
+  .profile-content {
+    width: 80%;
+    margin: 100px auto 0;
+
+    .box {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 24px;
+      margin: 30px 0;
+      text-align: left;
+
+      &.video {
+        padding: 0;
+        position: relative;
+        width: 100%;
+        height: 566px;
+
+        video {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+
+      &.white {
+        background-color: #fff;
+      }
+
+      .profile-box-title {
+        @include typoConfiguration(24, 1.4, left, 0em);
+      }
+
+      &__tag-wrapper {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .box-tag {
+        padding: 5px 10px;
+        border-radius: 50px;
+        background-color: $primary;
+        vertical-align: middle;
+
+        .body1 {
+          color: $white;
+          margin: 0;
+        }
+      }
+
+      .attc_academic-list {
+        position: relative;
+        padding-bottom: 20px;
+
+        &:before {
+          content: '';
+          height: 10px;
+          width: 10px;
+          background-color: $primary;
+          left: -24px;
+          top: 5px;
+          position: absolute;
+          border-radius: 100%;
+        }
+
+        &:after {
+          content: '';
+          height: 75%;
+          position: absolute;
+          left: -19.5px;
+          bottom: 100%;
+          width: 1px;
+          background-color: $gray30;
+        }
+
+        &:first-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .value-label {
+    @include typoConfiguration(20, 1.4, right, 0em);
+    color: $primary50;
+    margin-bottom: 5px;
+  }
+
+  .profile_comments {
+    padding: 80px 200px;
+    background: #fecd6a;
+    text-align: left;
+
+    .slick-list {
+      padding: 0 10% 0 0;
+    }
+
+    h5 {
+      text-align: left;
+    }
+
+    .comment-container {
+      height: 415px;
+      width: 438px;
+      border-radius: 10px;
+      padding: 40px 20px;
+      background-color: #fff;
+      text-align: center;
+      margin: 0 10px;
+
+      .body1 {
+        text-align: center;
+
+        &.comment {
+          width: 290px;
+          max-width: 80%;
+          margin: 0 auto 16px;
+        }
+      }
+    }
+  }
+
+  .comments-slider {
+    .slick-dots {
+      li {
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+
+        button {
+          background: rgba(0, 0, 0, 0.3);
+          height: 10px;
+          width: 10px;
+        }
+
+        &.slick-active {
+          button {
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  &.payment-page {
+    .profile-content {
+      margin: rdm(20) auto;
+
+      .box {
+        padding: rdm(30) rdm(20);
+        margin-top: 0;
+
+        &.row {
+          padding: 0 rdm(60);
+
+          .controls {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .h5 {
+      margin-bottom: rdm(20);
+    }
+
+    .card-container {
+      padding: rdm(15) 0;
+
+      ul {
+        padding: 0;
+
+        li {
+          padding: rdm(25) 0;
+          border-bottom: 1px solid $gray30;
+
+          b {
+            text-transform: uppercase;
+            font-size: rdm(16);
+            margin: 0 rdm(10);
+          }
+
+          .col {
+            padding: 0 !important;
+          }
+
+          p {
+            margin-bottom: 0;
+          }
+
+          &:first-of-type {
+            border-top: 1px solid $gray30;
+          }
+        }
+      }
+
+      label {
+        font-size: rdm(16);
+
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+
+    .form-field {
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    .content-header {
+      .h5 {
+        margin-top: rdm(30);
+      }
+    }
+
+    .form-header {
+      // margin-top: -#{rdm(60)};
+      margin-bottom: rdm(20);
+      p {
+        color: #4c4d5d;
+        .circle {
+          border: 1px solid #4c4d5d;
+          border-radius: 50%;
+          display: inline-block;
+          text-align: center;
+          height: 2.46em;
+          width: 2.46em;
+          line-height: 2.46em;
+          margin-right: 2px;
+          margin-left: 2px;
+        }
+        .material-icons-outlined {
+          font-size: 16px !important;
+          vertical-align: sub;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,8 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "pranaygp.vscode-css-peek",
+    "csstools.postcss"
+  ],
   "unwantedRecommendations": []
 }

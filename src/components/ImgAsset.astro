@@ -1,0 +1,22 @@
+---
+import { ImgConfigOptions } from 'astro-imagetools';
+import { Image } from 'astro:assets';
+
+interface Props extends Omit<ImgConfigOptions, 'src' | 'alt'> {
+  file: string;
+  class?: string | null;
+  alt?: string | null;
+}
+
+const { file, alt, class: className, ...attributes } = Astro.props;
+const images = import.meta.glob('../assets/img/*.*');
+
+console.log('---------------- IMAGES', images);
+---
+
+<!-- <Img src={`/src/assets/img/${file}`} alt={alt || ''} /> -->
+<Image
+  src={images[`../assets/img/${file}`]() as any}
+  alt={alt || ''}
+  class={className}
+/>

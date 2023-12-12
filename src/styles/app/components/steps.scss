@@ -1,0 +1,1012 @@
+#steps-container {
+  margin-bottom: 2vw;
+
+  @include mobile() {
+    .dashboard-content {
+      width: 100%;
+    }
+
+    &.sidebar-content {
+      padding-top: rm(20) !important;
+      padding-left: rm(8) !important;
+    }
+  }
+
+  .content-body {
+    display: table;
+
+    @include mobile() {
+      max-width: 100%;
+      display: block;
+    }
+
+    .box {
+      height: calc(75vh - 8.33333vw);
+      min-width: 100%;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      display: table-cell;
+      vertical-align: top;
+
+      @include mobile() {
+        display: inline-block;
+        height: auto;
+      }
+    }
+
+    .step {
+      .box {
+        display: block;
+        height: auto;
+      }
+    }
+  }
+
+  .step-buttons {
+    position: absolute;
+    top: 102%;
+    right: 0;
+
+    button {
+      margin-left: 30px;
+
+      @include mobile() {
+        &:first-child {
+          margin-left: 0;
+        }
+
+        margin-left: rm(15);
+        font-size: rm(14);
+        margin-bottom: rm(20);
+      }
+    }
+  }
+
+  .add_rmv_form {
+    border: 1px solid #4c4d5d;
+    border-radius: 5px;
+    padding-left: 40px;
+    position: relative;
+    margin-right: 10px;
+
+    @include mobile() {
+      font-size: rm(12);
+      padding-left: rm(30);
+      margin-right: rm(5);
+    }
+
+    &.remove_form {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+
+      @include mobile() {
+        width: rm(14);
+      }
+    }
+  }
+
+  .steps-control {
+    display: none;
+    margin-bottom: 50px;
+    text-align: center;
+
+    ul {
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 1px solid $gray80;
+        position: relative;
+        margin: 0 20px;
+        background-color: #fff;
+        transition: all 2s ease;
+
+        &:before {
+          content: '';
+          height: 1px;
+          width: 45px;
+          background-color: $gray80;
+          position: absolute;
+          right: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 1.5s ease;
+        }
+
+        &:first-child {
+          margin-left: 0;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        span {
+          position: absolute;
+          font-size: 1.5rem;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $gray80;
+        }
+
+        &.sent {
+          border: 1px solid $primary;
+
+          span {
+            color: $primary;
+          }
+
+          &:before {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+
+    @include mobile() {
+      width: 100%;
+      min-width: 100%;
+      overflow-y: scroll;
+      text-align: left;
+
+      ul {
+        padding: 0;
+        display: inline-block;
+        min-width: rm(650);
+
+        li {
+          width: rm(30);
+          height: rm(30);
+
+          span {
+            font-size: rm(14);
+          }
+        }
+      }
+    }
+  }
+
+  .step {
+    display: none;
+    width: 100%;
+
+    &[data-step='0'] {
+      display: inline-block;
+      text-align: center;
+      padding-top: 10vh;
+
+      @include mobile() {
+        padding-top: 0;
+      }
+
+      h4 {
+        text-align: center;
+      }
+
+      &.completed {
+        padding-top: 0;
+
+        h4 {
+          text-align: left;
+        }
+      }
+    }
+
+    &[data-step='8'] {
+      text-align: center;
+      padding-top: 10vh;
+
+      h4 {
+        text-align: center;
+
+        @include mobile() {
+          font-size: rm(21);
+        }
+      }
+    }
+
+    h5 {
+      span {
+        font-size: 0.9rem;
+        font-weight: lighter;
+      }
+
+      &.no-margin {
+        margin-bottom: 0;
+      }
+
+      .title_obs {
+        font-size: 0.9rem;
+        font-weight: lighter;
+      }
+
+      @include mobile() {
+        letter-spacing: -0.06em;
+        font-size: rm(18);
+      }
+    }
+
+    .step-undertitle {
+      font-size: 1rem;
+      width: 100%;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 35px;
+    }
+
+    &[data-step='7'] {
+      @include mobile() {
+        .step-undertitle {
+          text-align: left;
+          font-size: rm(14);
+        }
+      }
+    }
+
+    &.completed {
+      h4 {
+        margin-bottom: rdm(30);
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      .attc_profile-pic {
+        border-radius: 100%;
+        width: 208px;
+        height: auto;
+        max-width: 100%;
+      }
+
+      .attc_profile-name {
+        padding-bottom: 14px;
+        border-bottom: 1px solid $gray30;
+      }
+
+      .attc_title {
+        @include typoConfiguration(32, 1, left, 0em);
+
+        @include mobile() {
+          @include typoConfiguration(21, 1, left, 0em, bold);
+          margin-top: rm(14);
+        }
+
+        &.smaller {
+          @include typoConfiguration(24, 1, left, 0em);
+          margin-top: 14px;
+          margin-bottom: 8px;
+
+          @include mobile() {
+            @include typoConfiguration(18, 1, left, 0em);
+            margin-top: rm(14);
+            margin-bottom: rm(6);
+          }
+        }
+      }
+
+      .attc_description-container {
+        height: 50px;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        transition: all 0.5 ease;
+
+        @include mobile() {
+          height: rm(80);
+          padding-bottom: rm(25);
+        }
+
+        > p {
+          height: auto;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.5 ease;
+        }
+
+        &.active {
+          height: auto !important;
+
+          @include mobile() {
+            min-height: rm(80);
+          }
+
+          > p {
+            overflow: auto;
+          }
+        }
+      }
+
+      .attc_description-info {
+        position: relative;
+        padding-bottom: 50px;
+      }
+
+      .attc_description-read-more {
+        position: absolute;
+        bottom: rdm(20);
+        left: 0;
+        color: $primary;
+        text-decoration: none;
+
+        .more {
+          display: inline-block;
+        }
+
+        .minus {
+          display: none;
+        }
+
+        > .material-icons-outlined {
+          position: absolute;
+          top: 5%;
+          font-size: 16px;
+          transform: rotate(-90deg) translateY(15%);
+          margin-right: 7px;
+
+          @include mobile() {
+            font-size: rm(14) !important;
+          }
+        }
+
+        &.active {
+          .more {
+            display: none;
+          }
+
+          .minus {
+            display: inline-block;
+          }
+
+          > .material-icons-outlined {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      @include specialityTag();
+
+      .attc_academic-list {
+        position: relative;
+        padding-bottom: 20px;
+
+        &:before {
+          content: '';
+          height: 10px;
+          width: 10px;
+          background-color: $primary;
+          left: -24px;
+          top: 5px;
+          position: absolute;
+          border-radius: 100%;
+        }
+
+        &:after {
+          content: '';
+          height: 75%;
+          position: absolute;
+          left: -19.5px;
+          bottom: 100%;
+          width: 1px;
+          background-color: $gray30;
+        }
+
+        &:first-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      .attc_modality-container {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @include mobile() {
+          padding-left: rm(6);
+          padding-right: rm(6);
+          padding-top: rm(35);
+        }
+
+        .attc_modality-block {
+          .row {
+            > div {
+              padding: 0;
+            }
+          }
+        }
+
+        .attc_modality-value {
+          @include typoConfiguration(32, 1, center, 0em);
+
+          @include mobile() {
+            @include typoConfiguration(18, 1, left, 0em);
+          }
+        }
+
+        .attc_modality-time {
+          border-radius: 5px;
+          padding: 4px 6px;
+          background-color: $gray5;
+        }
+      }
+    }
+  }
+
+  .tempo_container {
+    margin-bottom: 45px;
+  }
+
+  .step_form {
+    h4 {
+      text-align: left;
+    }
+
+    input {
+      padding: 8px;
+      border: 1px solid #4c4d5d;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #4c4d5d;
+      outline: 0;
+      margin-top: 0;
+
+      @include mobile() {
+        font-size: rm(14);
+        margin-top: rm(4);
+
+        &[type='checkbox'] {
+          font-size: 5.5vw;
+        }
+      }
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    select {
+      padding: 5px 8px;
+      border: 1px solid #4c4d5d;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #4c4d5d;
+      outline: 0;
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    .step-textarea {
+      width: 100%;
+      height: 175px;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 50px;
+
+      @include mobile() {
+        font-size: rm(14);
+        margin-bottom: rm(20);
+      }
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    .step-select {
+      width: 100%;
+      border-radius: 5px;
+
+      &.error {
+        border: 1px solid red;
+      }
+    }
+
+    .input-container {
+      display: inline-block;
+      margin-right: 12px;
+      margin-bottom: 20px;
+
+      @include mobile() {
+        width: 100% !important;
+      }
+
+      input {
+        width: 100%;
+
+        &[type='checkbox'] {
+          width: auto;
+        }
+      }
+
+      select {
+        width: 100%;
+      }
+
+      label {
+        width: 100%;
+
+        @include mobile() {
+          font-size: rm(12);
+          font-weight: normal;
+        }
+      }
+    }
+
+    .btw_dates {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+
+    #tempo_experiencia {
+      width: 56px;
+      box-sizing: border-box;
+      margin-right: 15px;
+    }
+
+    #tempo_tipo {
+      width: 90px;
+    }
+
+    .label_duration {
+      width: 10%;
+      margin-right: 15px;
+
+      @include mobile() {
+        width: auto;
+        font-weight: normal;
+        font-size: rm(12);
+      }
+    }
+  }
+
+  .multiple_select-container {
+    padding-top: 50px;
+    position: relative;
+    width: 100%;
+
+    .select2-selection {
+      border: 0;
+
+      .select2-selection__choice {
+        padding: 4px 16px;
+        font-size: 0.9rem;
+        border-radius: 50px;
+        background-color: #dfe1ec;
+        position: relative;
+        padding-right: 24px;
+
+        span {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.2rem;
+          color: #212529;
+        }
+      }
+    }
+
+    .select2-search {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0;
+
+      input {
+        width: 100% !important;
+        padding: 10px 50px;
+      }
+
+      &:before {
+        content: '';
+        width: 22px;
+        height: 22px;
+        background-image: url('/src/assets/img/lupa.png');
+        background-size: 100%;
+        position: absolute;
+        z-index: 200;
+        left: 14px;
+        top: 55%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .form-check-label {
+    text-align: left;
+    text-indent: 0.1rem;
+    margin-right: 10px;
+    width: auto;
+
+    font-size: rdm(16);
+
+    @include mobile() {
+      font-size: rm(14);
+    }
+  }
+
+  .checkbox_inform {
+    display: inline-block;
+
+    @include mobile() {
+      min-width: 48%;
+      margin-bottom: rm(15);
+    }
+
+    input {
+      display: inline-block;
+    }
+
+    label {
+      display: inline-block;
+      width: auto !important;
+      vertical-align: middle;
+
+      font-size: rdm(16);
+
+      @include mobile() {
+        font-size: rm(14);
+      }
+    }
+  }
+
+  .modalities-value-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @include mobile() {
+      text-align: left;
+    }
+  }
+
+  .modalities-container {
+    width: 100%;
+    border: 1px solid #b5b7c3;
+    border-radius: 5px;
+    padding: 24px;
+    margin-bottom: 30px;
+    text-align: left;
+
+    &.disabled {
+      * {
+        opacity: 0.5;
+      }
+    }
+
+    .modalities-regular {
+      margin-bottom: 25px;
+    }
+
+    .modalities-title {
+      font-weight: bold;
+    }
+
+    .modalities-value_container {
+      position: relative;
+
+      .input-modalities_label {
+        position: absolute;
+        left: 10px;
+        top: 48%;
+        transform: translateY(-50%);
+      }
+
+      .input-modalities-value {
+        width: 100%;
+        padding-left: 30px;
+      }
+    }
+  }
+
+  .step-image-container {
+    width: 480px;
+    margin: 0 auto;
+    text-align: left;
+
+    .step-image_placeholder {
+      width: 30%;
+      margin-bottom: 30px;
+    }
+
+    .main-input {
+      width: 106%;
+      margin-left: -3%;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+  }
+
+  .step-video_placeholder {
+    width: 680px;
+    height: 360px;
+
+    @include mobile() {
+      width: 100%;
+      height: rm(140);
+    }
+  }
+
+  .error-label {
+    color: #aa223a;
+  }
+
+  .form_adder {
+    margin-bottom: 35px;
+
+    @include mobile() {
+      margin-bottom: rm(5);
+    }
+  }
+}
+
+.select2-dropdown {
+  top: -40px;
+}
+
+.steps_block,
+.steps-completed {
+  &.hidden {
+    display: none !important;
+  }
+}
+
+.steps-completed {
+  .step {
+    display: inline-block !important;
+  }
+}
+
+.step-agenda_header {
+  .agenda_fuso-horario {
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  .configuracoes_agenda {
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+
+    .configuracoes_agenda-container {
+      display: none;
+      position: absolute;
+      top: 101%;
+      right: 0;
+      width: 330px;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid #dfe1ec;
+      box-sizing: border-box;
+      box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+      z-index: 220;
+
+      @include mobile() {
+        width: rm(210);
+        padding: rm(10);
+
+        .btn {
+          font-size: rm(10);
+        }
+      }
+    }
+  }
+
+  h5 {
+    font-size: rd(24);
+    margin-bottom: rd(24);
+  }
+
+  .duration-title {
+    font-size: rd(16);
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .duration-time {
+    font-size: rd(16);
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 12px;
+    background-color: #f0eef9;
+    padding: 1px 4px;
+    display: inline-block;
+  }
+}
+
+.step-agenda {
+  .table_agenda-days {
+    width: 100%;
+    border: 1px solid #b5b7c3;
+    border-top: 0;
+
+    ul {
+      padding: 20px 10px;
+      margin: 0;
+
+      li {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 5px 0;
+        border-radius: 5px;
+        position: relative;
+
+        &.agenda_input-list {
+          padding: 35px 0;
+        }
+
+        .agenda_input-hour {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #cfd1dd;
+          text-align: center;
+          padding: 20px 0;
+          border-radius: 5px;
+          outline: 0;
+
+          &.error {
+            border: 1px solid red;
+            color: red;
+          }
+        }
+
+        .alert {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: -3px;
+          right: -3px;
+          background-image: url('/src/assets/img/alert.png');
+          background-size: cover;
+          padding: 0;
+          margin: 0;
+          background-repeat: no-repeat;
+          display: none;
+
+          &:hover {
+            &:before {
+              content: 'Horário não está de acordo com o tempo de atendimento + intervalo!';
+              background-color: #fff;
+              @include typoConfiguration(12, 1.2, left, 0.05em);
+              padding: 7px;
+              border: 1px solid #cfd1dd;
+              border-radius: 5px;
+              position: absolute;
+              z-index: 200;
+              width: auto;
+              white-space: nowrap;
+              top: -40px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+
+            &.error {
+              &:before {
+                content: 'Hora inválida!';
+              }
+            }
+          }
+        }
+
+        &.agenda_add-hour,
+        &.agenda_remove-hour {
+          background-color: $gray5;
+          cursor: pointer;
+
+          .material-icons-outlined {
+            line-height: 1.4;
+
+            @include mobile() {
+              font-size: rm(14) !important;
+            }
+          }
+        }
+      }
+    }
+
+    .col {
+      padding: 0;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    &.completed {
+      table {
+        tbody {
+          height: 380px;
+        }
+      }
+    }
+
+    @include mobile() {
+      .td_column_days {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .table_header {
+    border: 1px solid #b5b7c3;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    @include mobile() {
+      overflow: hidden;
+      margin-top: rm(20);
+    }
+
+    > table {
+      width: 99%;
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+
+    thead {
+      tr {
+        padding-right: 20px;
+      }
+    }
+
+    p {
+      position: relative;
+      z-index: 30;
+      margin: 0;
+      text-align: center;
+    }
+
+    th {
+      width: 13%;
+      padding: 20px 0;
+      text-align: center;
+
+      @include mobile() {
+        text-align: center;
+
+        &.th_tab_days {
+          border-bottom: 2px solid transparent;
+          &.active {
+            border-bottom: 2px solid $primary;
+            color: $primary;
+            background-color: #f5efff;
+          }
+        }
+      }
+    }
+  }
+}

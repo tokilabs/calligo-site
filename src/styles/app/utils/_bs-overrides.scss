@@ -1,0 +1,68 @@
+/* Bootstrap variables overrides */
+$body-color: $dark;
+$btn-font-family: 'Open Sans', sans-serif;
+$input-padding-y: 0.625rem;
+$input-padding-x: 1rem;
+$border-radius: 0.313rem;
+
+.container {
+	max-width: calc(100vw - 72px) !important;
+
+	@include mobile() {
+		max-width: calc(100vw - 48px) !important;		
+	}
+
+	.row {
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.card {
+	/* Gray 30 */
+
+	border: 1px solid #B5B7C3 !important;
+	box-sizing: border-box;
+	border-radius: 20px !important;
+
+	&:hover {
+		box-shadow: 0px 0px 10px 1px #2F2E4133;
+	}
+}
+
+.card-group {
+	margin-top: 60px;
+	>.card {
+		margin: 0 80px;
+
+		.card-body {
+			padding: 1rem 2rem;
+		}
+
+		.card-footer {
+			background: transparent;
+			border-top: 0;
+			padding-bottom: 35px;
+		}
+	}
+}
+
+.input {
+	margin-bottom: rdm(16);
+
+	label {
+		padding-bottom: rdm(5);
+		padding-left: rdm(10);
+	}
+
+	&:focus-within {
+		label {
+			color:$primary;
+		}
+
+		input {
+			border-color: $primary;
+			outline-color: $primary;
+		}
+	}
+}

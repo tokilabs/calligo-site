@@ -1,0 +1,35 @@
+.design-system {
+    margin-top:5vw!important;
+    background-color: $gray5;
+    padding: rdm(20);
+}
+
+.items-list {
+    background-color: $gray5;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: rdm(20);
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $white;
+        box-sizing: border-box;
+        padding: rdm(40);
+        column-gap: rdm(40);
+
+        &--align-top {
+            align-self: start;
+        }
+
+        &--column-right {
+            margin-left: auto;
+        }
+
+        &--column-left {
+            margin-right: auto;
+        }
+    }
+}

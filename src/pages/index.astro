@@ -1,255 +1,381 @@
-
 ---
-import Head from '../components/Head.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+import ImgAsset from '../components/ImgAsset.astro';
+import '../styles/pages/index.scss';
 ---
-<Head />
-<Header />
-<body id="home">
-    <main class="main">
-        <div id="intro-calligo" class="container-fluid component" cp-name="sliders">
-            <div class="intro-slider">
-                <div>
-                    <div class="intro-text w-100 w-sm-50">
-                        <div class="row">
-                            <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
-                                <img class="brandname desktop" src="/img/brandname.png" alt="Calligo.">
-                                <img class="brandname mobile" src="/img/brandname-mobile.png" alt="Calligo.">
-                                <h1 class="text-start mobile-centered">Ambiente de transformação <br>e evolução!</h1>
-                                <p class="subtitle1 mobile-centered">
-                                    Evolua a sua prática e cuide melhor dos seus pacientes, de qualquer lugar e em segurança.
-                                    Conteúdos exclusivos e inéditos no Brasil para você, Terapeuta.<br>
-                                    Quer desenvolver seu consultório virtual? Amplie seu alcance profissional através dos serviços customizados da Calligo.
-                                </p>
-                                <br>
-                                <a href="/users/add-select-type" class="btn btn-bold btn-primary">Quero transformar!</a>                            </div>
-                        </div>
-                    </div>
 
-                    <img src="img/home-banner-1.png" class="slider-image desktop">
-                </div>
-
-                <div>
-                    <div class="intro-text w-100 w-sm-50">
-                        <div class="row">
-                            <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
-                                <img class="brandname desktop" src="/img/brandname.png" alt="Calligo.">
-                                <img class="brandname mobile" src="/img/brandname-mobile.png" alt="Calligo.">
-                                <h1 class="text-start mobile-centered">Evolua</h1>
-                                <p class="subtitle1 mobile-centered">
-                                    Autoconhecimento na palma da sua mão. <br>
-                                    Dê o primeiro passo para a sua transformação. Encontre um profissional independente e ideal para te ouvir.
-                                </p>
-                                <br>
-                                <a href="/search" class="btn btn-bold btn-primary">Quero evoluir!</a>                            </div>
-                        </div>
-                    </div>
-
-                    <img src="img/home-banner-1.png" class="slider-image desktop">
-                </div>
-
-                <div>
-                    <div class="intro-text w-100 w-sm-50">
-                        <div class="row">
-                            <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
-                                <img class="brandname desktop" src="/img/brandname.png" alt="Calligo.">
-                                <img class="brandname mobile" src="/img/brandname-mobile.png" alt="Calligo.">
-                                <br><br>
-                                <p class="subtitle1 mobile-centered">
-                                    Para transformar com nosso bater de asas e causar o efeito borboleta, contamos com cada pessoa alcançada. A Calligo quer tornar o acesso à saúde mental uma realidade de todos.
-                                </p>
-                                <br>
-                                <button data-bs-toggle="modal" data-bs-target="#videomodal" class="play_video component" cp-name="play_video_modal"><img src="img/play.png"> Assista o vídeo</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <img src="img/home-banner-2.png" class="slider-image desktop">
-                </div>
+<DefaultLayout id="home" title="Home">
+  <main class="main">
+    <div id="intro-calligo" class="container-fluid component" cp-name="sliders">
+      <div class="intro-slider">
+        <div>
+          <div class="intro-text w-100 w-sm-50">
+            <div class="row">
+              <div
+                class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+                <ImgAsset
+                  class="brandname desktop"
+                  file="brandname.png"
+                  alt="Calligo."
+                />
+                <ImgAsset
+                  class="brandname mobile"
+                  file="brandname-mobile.png"
+                  alt="Calligo."
+                />
+                <h1 class="text-start mobile-centered">
+                  Ambiente de transformação <br />e evolução!
+                </h1>
+                <p class="subtitle1 mobile-centered">
+                  Evolua a sua prática e cuide melhor dos seus pacientes, de
+                  qualquer lugar e em segurança. Conteúdos exclusivos e inéditos
+                  no Brasil para você, Terapeuta.
+                  <br />
+                   Quer desenvolver seu consultório virtual? Amplie seu alcance
+                  profissional através dos serviços customizados da Calligo.
+                </p>
+                <br />
+                <a
+                  href="/users/add-select-type"
+                  class="btn btn-bold btn-primary">
+                  Quero transformar!
+                </a>
+              </div>
             </div>
-
-            <div class="intro-image mobile">
-                <img src="img/intro-image-mobile.png" class="slider-image">
-            </div>
-            <a class="help-button" href="/help"><img src="img/ajuda.png"></a>
-        </div>
-        <div id="for-whom" class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 offset-md-1 text-start">
-                    <div class="tag primary text-start mobile"><p class="overline">PARA PSICÓLOGOS</p></div>
-                    <img src="img/ilustracao-1.png" class="for-whom-ilustration">
-                </div>
-                <div class="col-lg-5 offset-md-1 text-start">
-                    <div class="tag primary text-start desktop"><p class="overline">PARA PSICÓLOGOS</p></div>
-                    <h2 class="text-start">
-                        Conecte conosco para evoluir e transformar! <br class="mobile">Call I Go, seja Calligo.
-                    </h2>
-                    <p class="subtitle1">
-                        Para os Psicólogos que decidiram entregar o seu conhecimento em forma de orientação e auxílio no desenvolvimento da sociedade. Mas quem cuida de você? Seremos fonte de cuidado, respeito e profissionalismo, transformando sua carreira. <br>
-                        Na Calligo você não se resume a quantidade de estrelas que te avaliam.
-                    </p>
-                    <br>
-                    <a href="/therapist" class="btn btn-bold btn-primary">SAIBA MAIS</a>                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row align-items-center">
-                <div class="col-lg-5 offset-md-1 text-start for-whom_text-mob">
-                    <div class="tag secondary text-start"><p class="overline">PARA VOCÊ</p></div>
-                    <img src="img/ilustracao-2.png" class="for-whom-ilustration mobile">
-                    <h2 class="text-start">
-                        Acreditamos na Transformação para Revolucionar
-                    </h2>
-                    <p class="subtitle1">
-                        Sabemos que cuidar da saúde mental não é uma realidade para todos, e que muitas vezes o que impede uma pessoa de procurar ajuda, está relacionado ao alto custo do investimento. <br>
-                        Pensando nisso, a Calligo criou a Terapia de Alcance, a sua oportunidade para se desenvolver com profissionais que irão disponibilizar ajuda qualificada a um valor que está ao seu alcance.
-                    </p>
-                    <br>
-                    <!-- <button class="btn btn-bold btn-secondary">SAIBA MAIS</button> -->
-                </div>
-                <div class="col-lg-4 offset-1 desktop">
-                    <img src="img/ilustracao-2.png" class="for-whom-ilustration">
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row align-items-center justify-content-center">
-                <div class="col-md-10 quote-block">
-                    <img src="img/aspas-1.png" class="for-whom-quote">
-                    <p class="quote-text">
-                        Acreditamos no poder da transformação através de pequenos gestos. A Calligo veio para proporcionar o efeito borboleta, que com o seu bater de asas é capaz de gerar resultados significativos na vida das pessoas. Pequenas mudanças podem gerar grandes fenômenos. Seja a sua própria transformação!
-                    </p>
-                    <a href="/manifest" class="btn btn-bold btn-primary">SAIBA MAIS</a>                    <img src="img/aspas-2.png" class="for-whom-quote">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div id="homeWhyTherapy" class="row">
-	<div class="col-md-5 offset-md-1">
-		<h2>Por que fazer terapia?</h2>
-		<img class="mobile ilustra_whyTherapy" src="/img/ilustra_whyTherapy.png" alt="Por que fazer terapia?">
-		<div class="row">
-			<div class="col-3 col-md-2">
-				<img class="whytherapy-icon" src="/img/icon_security.png" alt="Ícone Segurança">
-			</div>
-			<div class="col-9 col-md-7">
-				<h5>Sessões Criptografadas</h5>
-				<p class="subtitle1">Somos incessantes pela sua segurança, privacidade e confidencialidade; </p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-3 col-md-2">
-				<img class="whytherapy-icon" src="/img/icon_mic.png" alt="Ícone Segurança">
-			</div>
-			<div class="col-9 col-md-7">
-				<h5>Consultas por vídeo ou telefone</h5>
-				<p class="subtitle1">Sua terapia sem fronteiras, de qualquer lugar, a qualquer hora, com ou sem internet;</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-3 col-md-2">
-				<img class="whytherapy-icon" src="/img/icon_24h.png" alt="Ícone Segurança">
-			</div>
-			<div class="col-9 col-md-7">
-				<h5>Horários flexíveis para o seu conforto</h5>
-				<p class="subtitle1">O horário que se encaixa na sua realidade;</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-3 col-md-2">
-				<img class="whytherapy-icon" src="/img/icon_quality.png" alt="Ícone Segurança">
-			</div>
-			<div class="col-9 col-md-7">
-				<h5>Psicólogos habilitados <br>(CRP e E-PSI) </h5>
-				<p class="subtitle1">Evolua com Profissionais que foram qualificados e certificados pelo conselho profissional de Psicologia após terem completado com sucesso a educação, exames, formação e prática necessárias.</p>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-5 offset-draw desktop">
-		<img src="/img/ilustra_whyTherapy.png" alt="Por que fazer terapia?">
-	</div>
-</div>        </div>
-        <h2 class="desktop">Como começar a fazer terapia?</h2>
-
-<div class="container">
-	<div id="homeSteps" class="row desktop desktopFlex">
-		<div class="col">
-			<span class="bubble">I</span>
-			<h4>Faça seu cadastro</h4>
-		</div>
-		<div class="col">
-			<span class="bubble">II</span>
-			<h4>Escolha um psicólogo </h4>		
-		</div>
-		<div class="col">
-			<span class="bubble">III</span>
-			<h4>Agende uma sessão</h4>		
-		</div>
-		<div class="col">
-			<span class="bubble">IV</span>
-			<h4>E aproveite!</h4>		
-		</div>
-	</div>
-</div>
-
-<div id="homeSteps" class="mobile">
-	<div class="container">
-		<h1>Como começar a fazer terapia?</h1>
-		<div class="homeSteps_content">
-			<div class="row align-items-center">
-				<div class="col-4 justify-content-start">
-					<span class="bubble">I</span>
-				</div>
-				<div class="col-6">
-					<h5 class="text-start">Faça seu cadastro</h5>
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-4 offset-1 justify-content-end">
-					<span class="bubble">II</span>
-				</div>
-				<div class="col-6">
-					<h5 class="text-start">Escolha um psicólogo </h5>		
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-4 justify-content-start">
-					<span class="bubble">III</span>
-				</div>
-				<div class="col-6">
-					<h5 class="text-start">Agende uma sessão</h5>		
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-4 offset-1 justify-content-end">
-					<span class="bubble">IV</span>
-				</div>
-				<div class="col-6">
-					<h5 class="text-start">E inicie sua transformação!</h5>		
-				</div>
-			</div>
-		</div>
-	</div>
-</div>        <div id="homeSearch">
-            <h2>Encontre um Psicólogo</h2>
-            <p class="subtitle1">Encontre aqui o Psicólogo que pode ajudar a transformar sua vida.</p>
-            <form method="get" accept-charset="utf-8" action="/search">                <input class="form-control" type="text" id="search" name="text" placeholder="Pesquisa...">
-                <span class="search-icon material-icons-outlined">search</span>
-                <button class="btn btn-bold btn-light" type="submit">Buscar</button>            </form>        </div>
-    </main>
-    <Footer />
-    <div class="modal fade" id="videomodal" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-               <video controls>
-                  <source src="../videos/calligo_final_posterize.mp4" type="video/mp4">
-                  Seu navegador não suporta vídeos HTML5.
-              </video>
           </div>
+
+          <ImgAsset
+            file="home-banner-1.png"
+            class="slider-image desktop"
+            alt="Home banner"
+          />
+        </div>
+
+        <div>
+          <div class="intro-text w-100 w-sm-50">
+            <div class="row">
+              <div
+                class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+                <ImgAsset
+                  class="brandname desktop"
+                  file="brandname.png"
+                  alt="Calligo."
+                />
+                <ImgAsset
+                  class="brandname mobile"
+                  file="brandname-mobile.png"
+                  alt="Calligo."
+                />
+                <h1 class="text-start mobile-centered">Evolua</h1>
+                <p class="subtitle1 mobile-centered">
+                  Autoconhecimento na palma da sua mão. <br />
+                   Dê o primeiro passo para a sua transformação. Encontre um
+                  profissional independente e ideal para te ouvir.
+                </p>
+                <br />
+                <a href="/search" class="btn btn-bold btn-primary">
+                  Quero evoluir!
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <ImgAsset file="home-banner-1.png" class="slider-image desktop" />
+        </div>
+
+        <div>
+          <div class="intro-text w-100 w-sm-50">
+            <div class="row">
+              <div
+                class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+                <ImgAsset
+                  class="brandname desktop"
+                  file="brandname.png"
+                  alt="Calligo."
+                />
+                <ImgAsset
+                  class="brandname mobile"
+                  file="brandname-mobile.png"
+                  alt="Calligo."
+                />
+                <br /><br />
+                <p class="subtitle1 mobile-centered">
+                  Para transformar com nosso bater de asas e causar o efeito
+                  borboleta, contamos com cada pessoa alcançada. A Calligo quer
+                  tornar o acesso à saúde mental uma realidade de todos.
+                </p>
+                <br />
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#videomodal"
+                  class="play_video component"
+                  cp-name="play_video_modal">
+                  <ImgAsset file="play.png" /> Assista o vídeo
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <ImgAsset file="home-banner-2.png" class="slider-image desktop" />
+        </div>
       </div>
+
+      <div class="intro-image mobile">
+        <ImgAsset file="intro-image-mobile.png" class="slider-image" />
+      </div>
+      <a class="help-button" href="/help">
+        <ImgAsset file="ajuda.png" />
+      </a>
+    </div>
+    <div id="for-whom" class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 offset-md-1 text-start">
+          <div class="tag primary text-start mobile">
+            <p class="overline">PARA PSICÓLOGOS</p>
+          </div>
+          <ImgAsset file="ilustracao-1.png" class="for-whom-ilustration" />
+        </div>
+        <div class="col-lg-5 offset-md-1 text-start">
+          <div class="tag primary text-start desktop">
+            <p class="overline">PARA PSICÓLOGOS</p>
+          </div>
+          <h2 class="text-start">
+            Conecte conosco para evoluir e transformar! <br
+              class="mobile"
+            />Call I Go, seja Calligo.
+          </h2>
+          <p class="subtitle1">
+            Para os Psicólogos que decidiram entregar o seu conhecimento em
+            forma de orientação e auxílio no desenvolvimento da sociedade. Mas
+            quem cuida de você? Seremos fonte de cuidado, respeito e
+            profissionalismo, transformando sua carreira. <br />
+             Na Calligo você não se resume a quantidade de estrelas que te
+            avaliam.
+          </p>
+          <br />
+          <a href="/therapist" class="btn btn-bold btn-primary">SAIBA MAIS</a>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row align-items-center">
+        <div class="col-lg-5 offset-md-1 text-start for-whom_text-mob">
+          <div class="tag secondary text-start">
+            <p class="overline">PARA VOCÊ</p>
+          </div>
+          <ImgAsset
+            file="ilustracao-2.png"
+            class="for-whom-ilustration mobile"
+          />
+          <h2 class="text-start">
+            Acreditamos na Transformação para Revolucionar
+          </h2>
+          <p class="subtitle1">
+            Sabemos que cuidar da saúde mental não é uma realidade para todos, e
+            que muitas vezes o que impede uma pessoa de procurar ajuda, está
+            relacionado ao alto custo do investimento. <br />
+             Pensando nisso, a Calligo criou a Terapia de Alcance, a sua
+            oportunidade para se desenvolver com profissionais que irão
+            disponibilizar ajuda qualificada a um valor que está ao seu alcance.
+          </p>
+          <br />
+          <!-- <button class="btn btn-bold btn-secondary">SAIBA MAIS</button> -->
+        </div>
+        <div class="col-lg-4 offset-1 desktop">
+          <ImgAsset file="ilustracao-2.png" class="for-whom-ilustration" />
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-10 quote-block">
+          <ImgAsset file="aspas-1.png" class="for-whom-quote" />
+          <p class="quote-text">
+            Acreditamos no poder da transformação através de pequenos gestos. A
+            Calligo veio para proporcionar o efeito borboleta, que com o seu
+            bater de asas é capaz de gerar resultados significativos na vida das
+            pessoas. Pequenas mudanças podem gerar grandes fenômenos. Seja a sua
+            própria transformação!
+          </p>
+          <a href="/manifest" class="btn btn-bold btn-primary">SAIBA MAIS</a>
+          <ImgAsset file="aspas-2.png" class="for-whom-quote" />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="homeWhyTherapy" class="row">
+        <div class="col-md-5 offset-md-1">
+          <h2>Por que fazer terapia?</h2>
+          <ImgAsset
+            class="mobile ilustra_whyTherapy"
+            file="ilustra_whyTherapy.png"
+            alt="Por que fazer terapia?"
+          />
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <ImgAsset
+                class="whytherapy-icon"
+                file="icon_security.png"
+                alt="Ícone Segurança"
+              />
+            </div>
+            <div class="col-9 col-md-7">
+              <h5>Sessões Criptografadas</h5>
+              <p class="subtitle1">
+                Somos incessantes pela sua segurança, privacidade e
+                confidencialidade;
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <ImgAsset
+                class="whytherapy-icon"
+                file="icon_mic.png"
+                alt="Ícone Segurança"
+              />
+            </div>
+            <div class="col-9 col-md-7">
+              <h5>Consultas por vídeo ou telefone</h5>
+              <p class="subtitle1">
+                Sua terapia sem fronteiras, de qualquer lugar, a qualquer hora,
+                com ou sem internet;
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <ImgAsset
+                class="whytherapy-icon"
+                file="icon_24h.png"
+                alt="Ícone Segurança"
+              />
+            </div>
+            <div class="col-9 col-md-7">
+              <h5>Horários flexíveis para o seu conforto</h5>
+              <p class="subtitle1">
+                O horário que se encaixa na sua realidade;
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3 col-md-2">
+              <ImgAsset
+                class="whytherapy-icon"
+                file="icon_quality.png"
+                alt="Ícone Segurança"
+              />
+            </div>
+            <div class="col-9 col-md-7">
+              <h5>Psicólogos habilitados <br />(CRP e E-PSI)</h5>
+              <p class="subtitle1">
+                Evolua com Profissionais que foram qualificados e certificados
+                pelo conselho profissional de Psicologia após terem completado
+                com sucesso a educação, exames, formação e prática necessárias.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 offset-draw desktop">
+          <ImgAsset
+            file="ilustra_whyTherapy.png"
+            alt="Por que fazer terapia?"
+          />
+        </div>
+      </div>
+    </div>
+    <h2 class="desktop">Como começar a fazer terapia?</h2>
+
+    <div class="container">
+      <div id="homeSteps" class="row desktop desktopFlex">
+        <div class="col">
+          <span class="bubble">I</span>
+          <h4>Faça seu cadastro</h4>
+        </div>
+        <div class="col">
+          <span class="bubble">II</span>
+          <h4>Escolha um psicólogo</h4>
+        </div>
+        <div class="col">
+          <span class="bubble">III</span>
+          <h4>Agende uma sessão</h4>
+        </div>
+        <div class="col">
+          <span class="bubble">IV</span>
+          <h4>E aproveite!</h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="homeSteps" class="mobile">
+      <div class="container">
+        <h1>Como começar a fazer terapia?</h1>
+        <div class="homeSteps_content">
+          <div class="row align-items-center">
+            <div class="col-4 justify-content-start">
+              <span class="bubble">I</span>
+            </div>
+            <div class="col-6">
+              <h5 class="text-start">Faça seu cadastro</h5>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-4 offset-1 justify-content-end">
+              <span class="bubble">II</span>
+            </div>
+            <div class="col-6">
+              <h5 class="text-start">Escolha um psicólogo</h5>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-4 justify-content-start">
+              <span class="bubble">III</span>
+            </div>
+            <div class="col-6">
+              <h5 class="text-start">Agende uma sessão</h5>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-4 offset-1 justify-content-end">
+              <span class="bubble">IV</span>
+            </div>
+            <div class="col-6">
+              <h5 class="text-start">E inicie sua transformação!</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="homeSearch">
+      <h2>Encontre um Psicólogo</h2>
+      <p class="subtitle1">
+        Encontre aqui o Psicólogo que pode ajudar a transformar sua vida.
+      </p>
+      <form method="get" accept-charset="utf-8" action="/search">
+        <input
+          class="form-control"
+          type="text"
+          id="search"
+          name="text"
+          placeholder="Pesquisa..."
+        />
+        <span class="search-icon material-icons-outlined">search</span>
+        <button class="btn btn-bold btn-light" type="submit">Buscar</button>
+      </form>
+    </div>
+  </main>
+
+  <div class="modal fade" id="videomodal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <video controls>
+          <source file="calligo_final_posterize.mp4" type="video/mp4" />
+           Seu navegador não suporta vídeos HTML5.
+        </video>
+      </div>
+    </div>
   </div>
-  <script is:inline src="../js/Vendors.js"></script>    <script is:inline src="../js/Main.js"></script></body>
-  </div>
-</body>
-</html>
+  <!-- <script is:inline src="/js/Vendors.js"></script>
+  <script is:inline src="/js/app/main.js"></script> -->
+</DefaultLayout>

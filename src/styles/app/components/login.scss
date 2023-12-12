@@ -1,0 +1,149 @@
+#login {
+  @include mobile() {
+    padding-top: rm(100);
+  }
+
+  h3 {
+    margin-bottom: rdm(25);
+  }
+
+  .wrapper {
+    min-height: 100vh;
+  }
+
+  a:not(.btn) {
+    color: #4c4d5d !important;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .input,
+  .form-control {
+    margin-bottom: rdm(16);
+
+    .form-control {
+      margin-bottom: 0;
+    }
+  }
+
+  &.no-model {
+    .error-message {
+      margin: rdm(-13) 0 rdm(5) 0;
+    }
+  }
+
+  .login-slider {
+    background: url('/src/assets/img/bg-login.png') 100% 100% no-repeat;
+    background-size: 100% 100%;
+    background-position: top left;
+
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    padding-top: rdm(80);
+
+    .slider {
+      width: 26vw;
+      display: block;
+      margin-right: rdm(50);
+
+      img {
+        max-width: 100%;
+        margin-bottom: rdm(40);
+      }
+
+      h4 {
+        margin-bottom: rdm(50);
+      }
+
+      .btn {
+        padding-left: 2em;
+        padding-right: 2em;
+        margin-bottom: rdm(10);
+      }
+    }
+  }
+
+  .form-wrapper {
+    display: block;
+    margin: 0px auto rdm(4);
+    text-align: left;
+
+    p {
+      margin-bottom: rdm(40);
+    }
+  }
+
+  #forgotPwd,
+  #pwdSent {
+    display: none;
+  }
+
+  #pwdSent {
+    text-align: center;
+
+    .form-wrapper {
+      text-align: center;
+
+      .btn {
+        margin-left: rdm(10);
+        margin-right: rdm(10);
+      }
+    }
+  }
+
+  @include mobile() {
+  }
+}
+
+.pwd-wrapper {
+  position: relative;
+
+  .material-icons-outlined {
+    position: absolute;
+    right: rdm(10);
+    font-size: 1.4em;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: all 0.2s linear;
+    opacity: 1;
+    pointer-events: initial;
+    color: $gray80;
+    cursor: pointer;
+
+    @include mobile() {
+      font-size: rm(24) !important;
+      right: rm(10);
+    }
+
+    &:hover {
+      // color: #000;
+    }
+
+    &.icon-off {
+      opacity: 0;
+      pointer-events: none;
+      top: 52%;
+      right: rdm(10);
+
+      @include mobile() {
+        right: rm(10);
+      }
+    }
+  }
+
+  &.showpwd {
+    .material-icons-outlined {
+      &.icon-on {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &.icon-off {
+        opacity: 1;
+        pointer-events: initial;
+      }
+    }
+  }
+}

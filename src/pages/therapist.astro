@@ -1,143 +1,203 @@
 ---
-import Head from '../components/Head.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Defaultlayout from '../layouts/DefaultLayout.astro';
+import ImgAsset from '../components/ImgAsset.astro';
 ---
-<Head />
-<Header />
-<body>
-    <div  id="therapist">
-    <main class="main">
-        <div id="intro-calligo" class="container-fluid therapist-page component" cp-name="sliders">
-            <div class="intro-slider desktop">
-                <img src="img/terapeuta_foto1.png" class="slider-image">
-            </div>
-            <div class="d-flex container h-100 align-items-center intro-text">
-                <div class="row ">
-                    <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
-                        <h1 class="text-start text__white svg_h1 desktop">
-                            <svg class="logo text__white" width="110" height="40" viewBox="50 0 110 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M60.015 32.4483C55.3221 32.4483 51.9308 29.1598 51.9308 24.6381C51.9308 20.1165 55.2878 16.8965 60.015 16.8965C63.8516 16.8965 66.7975 19.1573 67.6197 22.6513C67.7224 23.0281 67.4141 23.405 67.0373 23.405H64.6052C63.7146 23.405 62.8582 23.0624 62.2759 22.4116C61.7278 21.795 60.9057 21.4182 60.015 21.4182C58.2338 21.4182 57.0006 22.7541 57.0006 24.6724C57.0006 26.5907 58.268 27.9609 60.015 27.9609C60.9399 27.9609 61.762 27.5841 62.3101 26.899C62.8925 26.1796 63.7831 25.8371 64.708 25.8371H67.1058C67.4826 25.8371 67.7909 26.2139 67.6882 26.5907C66.8661 30.0847 63.8516 32.4483 60.015 32.4483Z" fill="white"></path>
-                              <path d="M85.6378 17.9241V31.3863C85.6378 31.6946 85.3637 31.9686 85.0554 31.9686H82.1438C81.904 31.9686 81.6984 31.8316 81.5957 31.6261C81.4586 31.2835 81.0476 31.1808 80.7393 31.3863C79.6431 32.1057 78.3414 32.4825 76.9027 32.4825C72.4496 32.4825 69.2296 29.2282 69.2296 24.6723C69.2296 20.1506 72.4153 16.9307 76.9027 16.9307C78.3757 16.9307 79.7116 17.3417 80.8421 18.0953C81.1504 18.3009 81.5272 18.1638 81.6984 17.8556L81.7669 17.7185C81.8697 17.513 82.0752 17.376 82.2808 17.376H85.0897C85.3637 17.3417 85.6378 17.5815 85.6378 17.9241ZM80.8421 24.6381C80.8421 22.754 79.4719 21.3153 77.5536 21.3153C75.6695 21.3153 74.2651 22.754 74.2651 24.6381C74.2651 26.5563 75.6353 27.9608 77.5536 27.9608C79.4376 27.9951 80.8421 26.5563 80.8421 24.6381Z" fill="white"></path>
-                              <path d="M87.7615 12.0664H91.5638C91.9064 12.0664 92.1804 12.3404 92.1804 12.683V31.352C92.1804 31.6946 91.9064 31.9686 91.5638 31.9686H87.7615C87.4189 31.9686 87.1449 31.6946 87.1449 31.352V12.683C87.1449 12.3404 87.4189 12.0664 87.7615 12.0664Z" fill="white"></path>
-                              <path d="M94.3386 12.0664H98.141C98.4835 12.0664 98.7575 12.3404 98.7575 12.683V31.352C98.7575 31.6946 98.4835 31.9686 98.141 31.9686H94.3386C93.9961 31.9686 93.722 31.6946 93.722 31.352V12.683C93.722 12.3404 93.9961 12.0664 94.3386 12.0664Z" fill="white"></path>
-                              <path d="M100.915 18.8832H104.718C105.06 18.8832 105.334 19.1572 105.334 19.4998V31.3863C105.334 31.7288 105.06 32.0029 104.718 32.0029H100.915C100.573 32.0029 100.299 31.7288 100.299 31.3863V19.4655C100.299 19.1572 100.573 18.8832 100.915 18.8832ZM100.949 12.0664H104.683C105.026 12.0664 105.3 12.3404 105.3 12.683V16.4511C105.3 16.7936 105.026 17.0677 104.683 17.0677H100.949C100.607 17.0677 100.333 16.7936 100.333 16.4511V12.683C100.333 12.3404 100.607 12.0664 100.949 12.0664Z" fill="white"></path>
-                              <path d="M122.222 17.3418C122.565 17.3418 122.839 17.6158 122.839 17.9584V30.3587C122.839 34.9489 119.824 37.7921 114.994 37.7921C111.192 37.7921 108.417 36.0108 107.458 33.0306C107.321 32.6196 107.629 32.2428 108.04 32.2428H111.74C111.946 32.2428 112.151 32.3798 112.254 32.5511C112.733 33.3389 113.83 33.75 114.926 33.75C116.604 33.75 117.974 32.6881 117.974 30.9411V30.4958C116.878 31.1809 115.577 31.5919 114.172 31.5919C109.993 31.5919 106.876 28.4747 106.876 24.2613C106.876 20.0822 109.993 16.8965 114.172 16.8965C115.679 16.8965 117.084 17.3761 118.214 18.1639C118.523 18.3695 118.934 18.2667 119.105 17.9584L119.242 17.6844C119.345 17.4788 119.55 17.3418 119.79 17.3418H122.222ZM114.994 27.4471C116.81 27.4471 118.111 26.1111 118.111 24.2613C118.111 22.4116 116.81 21.0756 114.994 21.0756C113.179 21.0756 111.877 22.4116 111.877 24.2613C111.877 26.1111 113.179 27.4471 114.994 27.4471Z" fill="white"></path>
-                              <path d="M124.346 24.6724C124.346 20.1507 127.772 16.8965 132.533 16.8965C137.294 16.8965 140.72 20.1507 140.72 24.6724C140.72 29.1941 137.26 32.4483 132.533 32.4483C127.772 32.4483 124.346 29.1598 124.346 24.6724ZM132.533 27.9266C134.383 27.9266 135.684 26.5907 135.684 24.6724C135.684 22.7541 134.383 21.4182 132.533 21.4182C130.683 21.4182 129.382 22.7541 129.382 24.6724C129.382 26.5907 130.718 27.9266 132.533 27.9266Z" fill="white"></path>
-                              <path d="M144.625 27.2759H144.831C146.132 27.2759 147.16 28.3378 147.16 29.6052C147.16 30.9069 146.098 31.9346 144.831 31.9346H144.625C143.323 31.9346 142.296 30.8727 142.296 29.6052C142.261 28.3378 143.323 27.2759 144.625 27.2759Z" fill="white"></path>
-                            </svg>
-                            <img class="icon_heart" src="/img/icon-heart.png">
-                        </h1>
-                        <img class="brandname mobile" src="/img/brandname-mobile-white.png" alt="Calligo.">
-                        <br>
-                        <p class="th-p_undertitle text__white">
-                            Soluções para<br> terapeutas<br> independentes<br> sem mensalidade!
-                        </p>
-                        <br><br class="desktop">
-                        <a href="#Seja" class="btn btn-bold btn-primary">Seja calligo!</a>
-                    </div>
-                </div>
-            </div>
-            <div class="intro-image mobile">
-                <img src="img/intro-therapist-image-mobile.png" class="slider-image">
-            </div>
-            <a class="help-button" href="/help"><img src="img/ajuda.png"></a>
+
+<Defaultlayout id="therapist" title="Therapist">
+  <main class="main">
+    <div
+      id="intro-calligo"
+      class="container-fluid therapist-page component"
+      cp-name="sliders">
+      <div class="intro-slider desktop">
+        <ImgAsset file="terapeuta_foto1.png" class="slider-image" />
+      </div>
+      <div class="d-flex container h-100 align-items-center intro-text">
+        <div class="row">
+          <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+            <h1 class="text-start text__white svg_h1 desktop">
+              <svg
+                class="logo text__white"
+                width="110"
+                height="40"
+                viewBox="50 0 110 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M60.015 32.4483C55.3221 32.4483 51.9308 29.1598 51.9308 24.6381C51.9308 20.1165 55.2878 16.8965 60.015 16.8965C63.8516 16.8965 66.7975 19.1573 67.6197 22.6513C67.7224 23.0281 67.4141 23.405 67.0373 23.405H64.6052C63.7146 23.405 62.8582 23.0624 62.2759 22.4116C61.7278 21.795 60.9057 21.4182 60.015 21.4182C58.2338 21.4182 57.0006 22.7541 57.0006 24.6724C57.0006 26.5907 58.268 27.9609 60.015 27.9609C60.9399 27.9609 61.762 27.5841 62.3101 26.899C62.8925 26.1796 63.7831 25.8371 64.708 25.8371H67.1058C67.4826 25.8371 67.7909 26.2139 67.6882 26.5907C66.8661 30.0847 63.8516 32.4483 60.015 32.4483Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M85.6378 17.9241V31.3863C85.6378 31.6946 85.3637 31.9686 85.0554 31.9686H82.1438C81.904 31.9686 81.6984 31.8316 81.5957 31.6261C81.4586 31.2835 81.0476 31.1808 80.7393 31.3863C79.6431 32.1057 78.3414 32.4825 76.9027 32.4825C72.4496 32.4825 69.2296 29.2282 69.2296 24.6723C69.2296 20.1506 72.4153 16.9307 76.9027 16.9307C78.3757 16.9307 79.7116 17.3417 80.8421 18.0953C81.1504 18.3009 81.5272 18.1638 81.6984 17.8556L81.7669 17.7185C81.8697 17.513 82.0752 17.376 82.2808 17.376H85.0897C85.3637 17.3417 85.6378 17.5815 85.6378 17.9241ZM80.8421 24.6381C80.8421 22.754 79.4719 21.3153 77.5536 21.3153C75.6695 21.3153 74.2651 22.754 74.2651 24.6381C74.2651 26.5563 75.6353 27.9608 77.5536 27.9608C79.4376 27.9951 80.8421 26.5563 80.8421 24.6381Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M87.7615 12.0664H91.5638C91.9064 12.0664 92.1804 12.3404 92.1804 12.683V31.352C92.1804 31.6946 91.9064 31.9686 91.5638 31.9686H87.7615C87.4189 31.9686 87.1449 31.6946 87.1449 31.352V12.683C87.1449 12.3404 87.4189 12.0664 87.7615 12.0664Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M94.3386 12.0664H98.141C98.4835 12.0664 98.7575 12.3404 98.7575 12.683V31.352C98.7575 31.6946 98.4835 31.9686 98.141 31.9686H94.3386C93.9961 31.9686 93.722 31.6946 93.722 31.352V12.683C93.722 12.3404 93.9961 12.0664 94.3386 12.0664Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M100.915 18.8832H104.718C105.06 18.8832 105.334 19.1572 105.334 19.4998V31.3863C105.334 31.7288 105.06 32.0029 104.718 32.0029H100.915C100.573 32.0029 100.299 31.7288 100.299 31.3863V19.4655C100.299 19.1572 100.573 18.8832 100.915 18.8832ZM100.949 12.0664H104.683C105.026 12.0664 105.3 12.3404 105.3 12.683V16.4511C105.3 16.7936 105.026 17.0677 104.683 17.0677H100.949C100.607 17.0677 100.333 16.7936 100.333 16.4511V12.683C100.333 12.3404 100.607 12.0664 100.949 12.0664Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M122.222 17.3418C122.565 17.3418 122.839 17.6158 122.839 17.9584V30.3587C122.839 34.9489 119.824 37.7921 114.994 37.7921C111.192 37.7921 108.417 36.0108 107.458 33.0306C107.321 32.6196 107.629 32.2428 108.04 32.2428H111.74C111.946 32.2428 112.151 32.3798 112.254 32.5511C112.733 33.3389 113.83 33.75 114.926 33.75C116.604 33.75 117.974 32.6881 117.974 30.9411V30.4958C116.878 31.1809 115.577 31.5919 114.172 31.5919C109.993 31.5919 106.876 28.4747 106.876 24.2613C106.876 20.0822 109.993 16.8965 114.172 16.8965C115.679 16.8965 117.084 17.3761 118.214 18.1639C118.523 18.3695 118.934 18.2667 119.105 17.9584L119.242 17.6844C119.345 17.4788 119.55 17.3418 119.79 17.3418H122.222ZM114.994 27.4471C116.81 27.4471 118.111 26.1111 118.111 24.2613C118.111 22.4116 116.81 21.0756 114.994 21.0756C113.179 21.0756 111.877 22.4116 111.877 24.2613C111.877 26.1111 113.179 27.4471 114.994 27.4471Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M124.346 24.6724C124.346 20.1507 127.772 16.8965 132.533 16.8965C137.294 16.8965 140.72 20.1507 140.72 24.6724C140.72 29.1941 137.26 32.4483 132.533 32.4483C127.772 32.4483 124.346 29.1598 124.346 24.6724ZM132.533 27.9266C134.383 27.9266 135.684 26.5907 135.684 24.6724C135.684 22.7541 134.383 21.4182 132.533 21.4182C130.683 21.4182 129.382 22.7541 129.382 24.6724C129.382 26.5907 130.718 27.9266 132.533 27.9266Z"
+                  fill="white">
+                </path>
+                <path
+                  d="M144.625 27.2759H144.831C146.132 27.2759 147.16 28.3378 147.16 29.6052C147.16 30.9069 146.098 31.9346 144.831 31.9346H144.625C143.323 31.9346 142.296 30.8727 142.296 29.6052C142.261 28.3378 143.323 27.2759 144.625 27.2759Z"
+                  fill="white">
+                </path>
+              </svg>
+              <ImgAsset class="icon_heart" file="icon-heart.png" />
+            </h1>
+            <ImgAsset
+              class="brandname mobile"
+              file="brandname-mobile-white.png"
+              alt="Calligo."
+            />
+            <br />
+            <p class="th-p_undertitle text__white">
+              Soluções para<br /> terapeutas<br /> independentes<br /> sem
+              mensalidade!
+            </p>
+            <br /><br class="desktop" />
+            <a href="#Seja" class="btn btn-bold btn-primary">Seja calligo!</a>
+          </div>
         </div>
+      </div>
+      <div class="intro-image mobile">
+        <ImgAsset
+          file="intro-therapist-image-mobile.png"
+          class="slider-image"
+        />
+      </div>
+      <a class="help-button" href="/help"><ImgAsset file="ajuda.png" /></a>
+    </div>
 
-        <div class="therapist_about">
-            <div class="therapist_about-header">
-                <h2>Apenas mais uma plataforma de terapia? Não!</h2>
-                <br>
-                <p class="body1">
-                    Mapeamos 15 serviços para Terapeutas dentro da plataforma. A sua trajetória será cuidada pela Calligo do início ao fim. Do suporte profissional ao acesso à Terapia. As soluções são customizadas para o profissional da Saúde Mental. Menos burocracia, segurança com criptografia de ponta e mais tempo para os seus treinamentos e autocuidado. Confira alguns dos nossos serviços:
-                </p>
-            </div>
+    <div class="therapist_about">
+      <div class="therapist_about-header">
+        <h2>Apenas mais uma plataforma de terapia? Não!</h2>
+        <br />
+        <p class="body1">
+          Mapeamos 15 serviços para Terapeutas dentro da plataforma. A sua
+          trajetória será cuidada pela Calligo do início ao fim. Do suporte
+          profissional ao acesso à Terapia. As soluções são customizadas para o
+          profissional da Saúde Mental. Menos burocracia, segurança com
+          criptografia de ponta e mais tempo para os seus treinamentos e
+          autocuidado. Confira alguns dos nossos serviços:
+        </p>
+      </div>
 
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <img class="thab-image" src="/img/icon-split-pagamento.png">
-                    <div class="thab-text-container">
-                        <h5>Split de pagamento</h5>
-                        <p class="body1">
-                            Seu pagamento é realizado de forma automática e direto na sua conta.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 desktop"></div>
-                <div class="col-12 col-md-4">
-                    <img class="thab-image" src="/img/icon-consultorio.png">
-                    <div class="thab-text-container">
-                        <h5>Consultório Virtual</h5>
-                        <p class="body1">
-                            Sem fronteiras, a qualquer momento, de qualquer lugar e com segurança.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4 desktop"></div>
-                <div class="col-12 col-md-4">
-                    <img class="thab-image" src="/img/icon-agenda.png">
-                    <div class="thab-text-container">
-                        <h5>Agenda online</h5>
-                        <p class="body1">
-                            Toda facilidade para você organizar sua rotina, gerir burocracias e documentos. Acesse seus agendamentos, recibos e prontuários pela palma da sua mão!
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 desktop"></div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <img class="thab-image" src="/img/icon-prontuario.png">
-                    <div class="thab-text-container">
-                        <h5>Prontuário Online</h5>
-                        <p class="body1">
-                            A evolução do seu prontuário, com acesso imediato, mantendo a ética e normas de privacidade, dentro das conformidades do CFP e da LGPD.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 desktop"></div>
-                <div class="col-12 col-md-4">
-                    <img class="thab-image" src="/img/icon-supervisao-tecnica.png">
-                    <div class="thab-text-container">
-                        <h5>Supervisão Técnica</h5>
-                        <p class="body1">
-                            Receba suporte profissional, melhore a qualidade do seu atendimento e desenvolva suas habilidades técnicas, com profissionais mais experientes no tratamento, de forma simples e acessível.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <ImgAsset class="thab-image" file="icon-split-pagamento.png" />
+          <div class="thab-text-container">
+            <h5>Split de pagamento</h5>
+            <p class="body1">
+              Seu pagamento é realizado de forma automática e direto na sua
+              conta.
+            </p>
+          </div>
         </div>
-
-        <div class="therapist-care">
-            <div class="mobile">
-                <img src="/img/ilustracao-care-mobile.png" class="for-whom-ilustration">
-            </div>
-            <div class="row">
-                <div class="col-lg-6 text-start mobile-centered">
-                    <h2 class="text-start text__white mobile-centered">
-                        Para você cuidar melhor <br class="desktop">
-                        do seu paciente, a Calligo cuida de você.
-                    </h2>
-                    <br>
-                    <p class="body1 text__white">
-                        Neste ambiente seguro e de transformação é promovido o alcance à Saúde Mental, tanto no números de pessoas, quanto interno com a ajuda de Supervisão e todas as ações exclusivas para Terapeutas que atendem na plataforma. Também damos suporte a perguntas específicas de Telessaúde e Saúde Mental. <br>
-                        Confira matérias exclusivas da psicologia, no Brasil, baseadas em evidências.
-                    </p>
-                    <br>
-                    <a href="#Seja" class="btn btn-bold btn-primary">Seja calligo!</a>
-                </div>
-                <div class="col-md-4 col-xl-5 offset-md-1 offset-xl-0 desktop">
-                    <img src="img/ilustracao-2.png" class="for-whom-ilustration">
-                </div>
-            </div>
+        <div class="col-12 col-md-4 desktop"></div>
+        <div class="col-12 col-md-4">
+          <ImgAsset class="thab-image" file="icon-consultorio.png" />
+          <div class="thab-text-container">
+            <h5>Consultório Virtual</h5>
+            <p class="body1">
+              Sem fronteiras, a qualquer momento, de qualquer lugar e com
+              segurança.
+            </p>
+          </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 desktop"></div>
+        <div class="col-12 col-md-4">
+          <ImgAsset class="thab-image" file="icon-agenda.png" />
+          <div class="thab-text-container">
+            <h5>Agenda online</h5>
+            <p class="body1">
+              Toda facilidade para você organizar sua rotina, gerir burocracias
+              e documentos. Acesse seus agendamentos, recibos e prontuários pela
+              palma da sua mão!
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 desktop"></div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <ImgAsset class="thab-image" file="icon-prontuario.png" />
+          <div class="thab-text-container">
+            <h5>Prontuário Online</h5>
+            <p class="body1">
+              A evolução do seu prontuário, com acesso imediato, mantendo a
+              ética e normas de privacidade, dentro das conformidades do CFP e
+              da LGPD.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 desktop"></div>
+        <div class="col-12 col-md-4">
+          <ImgAsset class="thab-image" file="icon-supervisao-tecnica.png" />
+          <div class="thab-text-container">
+            <h5>Supervisão Técnica</h5>
+            <p class="body1">
+              Receba suporte profissional, melhore a qualidade do seu
+              atendimento e desenvolva suas habilidades técnicas, com
+              profissionais mais experientes no tratamento, de forma simples e
+              acessível.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <!-- <div id="for-whom" class="container">
+    <div class="therapist-care">
+      <div class="mobile">
+        <ImgAsset
+          file="ilustracao-care-mobile.png"
+          class="for-whom-ilustration"
+        />
+      </div>
+      <div class="row">
+        <div class="col-lg-6 text-start mobile-centered">
+          <h2 class="text-start text__white mobile-centered">
+            Para você cuidar melhor <br class="desktop" />
+             do seu paciente, a Calligo cuida de você.
+          </h2>
+          <br />
+          <p class="body1 text__white">
+            Neste ambiente seguro e de transformação é promovido o alcance à
+            Saúde Mental, tanto no números de pessoas, quanto interno com a
+            ajuda de Supervisão e todas as ações exclusivas para Terapeutas que
+            atendem na plataforma. Também damos suporte a perguntas específicas
+            de Telessaúde e Saúde Mental. <br />
+             Confira matérias exclusivas da psicologia, no Brasil, baseadas em
+            evidências.
+          </p>
+          <br />
+          <a href="#Seja" class="btn btn-bold btn-primary">Seja calligo!</a>
+        </div>
+        <div class="col-md-4 col-xl-5 offset-md-1 offset-xl-0 desktop">
+          <ImgAsset file="ilustracao-2.png" class="for-whom-ilustration" />
+        </div>
+      </div>
+    </div>
+
+    <!-- <div id="for-whom" class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 offset-1">
-                    <img src="img/ilustracao-1.png" class="for-whom-ilustration">
+                    <ImgAsset file="ilustracao-1.png" class="for-whom-ilustration">
                 </div>
                 <div class="col-lg-5 offset-1 text-start">
                     <h2 class="text-start">
@@ -169,15 +229,12 @@ import Footer from '../components/Footer.astro';
                     <button class="btn btn-bold btn-primary">SEJA CALLIGO</button>
                 </div>
                 <div class="col-lg-4 offset-1">
-                    <img src="img/ilustracao-2.png" class="for-whom-ilustration">
+                    <ImgAsset file="ilustracao-2.png" class="for-whom-ilustration">
                 </div>
             </div>
             <br>
             <br>
             <br>
         </div> -->
-    </main>  
-    <Footer />
-</div>
-</body>
-</html>
+  </main>
+</Defaultlayout>

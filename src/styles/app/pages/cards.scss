@@ -1,0 +1,65 @@
+#cardsIndex {
+    .row {
+        &.cardItem {
+            padding: .8vw !important;
+            line-height: rdm(47);
+            margin-bottom: 1em;
+
+            .row-icon {
+                width: rdm(50);
+                height: rdm(50);
+                margin-right: rdm(15);
+            }
+
+            .material-icons-outlined {
+                position: relative;
+                top: 10%;
+            }
+
+            > div {
+                &:last-child {
+                    text-align: right;
+                }
+            }
+
+            &.historyItem {
+                line-height: 1.6;
+
+                strong {
+                    display: block;
+                }
+
+                .component {
+                    display: inline-block;
+                }
+
+                a.viewAll {
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: .8em;
+                    margin-left: 1em;
+                    cursor: pointer;
+
+                    span {
+                        top: 6px;
+                        left: -6px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+#add_card_page_modal {
+
+    .modal-content {
+        padding: 40px;
+    }
+
+    @media (min-width: 1024px) {
+        .modal-dialog {
+            max-width: rd(768);
+        }
+    }
+}

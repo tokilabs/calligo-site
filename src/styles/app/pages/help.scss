@@ -1,0 +1,352 @@
+#help-search {
+  background-color: $gray5;
+
+  .searchForm {
+    padding: rdm(60) 0 rdm(70);
+
+    @include mobile() {
+      padding-top: rm(80);
+      padding-bottom: rm(60);
+    }
+
+    h1 {
+      margin-bottom: rdm(40);
+
+      @include mobile() {
+        margin: 0;
+      }
+    }
+
+    p {
+      margin-bottom: rdm(80);
+
+      @include mobile() {
+        margin: rm(30) 0;
+      }
+    }
+
+    h1,
+    p {
+      text-align: center;
+      color: $white;
+    }
+
+    .form-outline {
+      input {
+        text-indent: 2em;
+
+        @include mobile() {
+          text-indent: 1em;
+        }
+      }
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(50%, -50%);
+
+        @include mobile() {
+          font-size: rm(18) !important;
+        }
+      }
+    }
+
+    .btn {
+      &.btn-outline-secondary {
+        color: $primary;
+        text-align: center;
+        display: inline-block;
+      }
+    }
+  }
+
+  .accordion {
+    padding: rdm(140) 0;
+
+    .container {
+      width: rdm(1200);
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+
+      @include mobile() {
+        width: 100%;
+        max-width: 100% !important;
+      }
+
+      &.help_list {
+        margin-top: rdm(50);
+        display: block;
+
+        @include mobile() {
+          padding: 0;
+        }
+
+        .h3 {
+          margin-bottom: rdm(20);
+        }
+      }
+    }
+
+    .container-categories {
+      width: rdm(1475);
+      margin: 0 auto;
+
+      @include mobile() {
+        width: rm(280);
+        overflow-y: scroll;
+      }
+    }
+
+    .accordion_list {
+      margin-bottom: -4px;
+      outline: none;
+    }
+
+    .accordion-button {
+      padding: rdm(20) rdm(15);
+      border: 1px solid #e4e4e8 !important;
+      outline: none;
+      border-radius: 0;
+      font-weight: bold;
+
+      @include mobile() {
+        padding: rm(25) rm(15);
+      }
+
+      &:after {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 8px solid #1a1a23;
+        background-image: none;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border: 1px solid #e4e4e8;
+        background-color: #fff;
+        color: #000;
+      }
+
+      &:not(.collapsed) {
+        box-shadow: none;
+        border: 1px solid #e4e4e8;
+        background-color: #fff;
+        color: #000;
+      }
+    }
+  }
+
+  .accordion_categories {
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    height: 224px;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    @include mobile() {
+      height: rm(55);
+    }
+
+    .accordion_categories-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    span {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: rdm(14);
+
+      .icon-inactive {
+        display: inline-block;
+      }
+
+      .icon-active {
+        display: none;
+      }
+
+      @include mobile() {
+        display: none;
+      }
+    }
+
+    p {
+      line-height: 1;
+      margin: 0;
+
+      @include mobile() {
+        font-size: rm(16);
+      }
+    }
+
+    &.active {
+      border: 1px solid $primary;
+
+      span {
+        .icon-inactive {
+          display: none;
+        }
+
+        .icon-active {
+          display: inline-block;
+        }
+      }
+
+      p {
+        color: $primary;
+      }
+    }
+  }
+
+  .help_accordion_category {
+    display: none;
+    width: 100%;
+    margin-bottom: rdm(50);
+
+    @include mobile() {
+      padding: 0;
+      margin-bottom: rm(40);
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .ajuda-contato {
+    background-color: #fff;
+
+    .ajuda-contato-bg {
+      width: 100%;
+    }
+
+    .ajc-form-container {
+      position: relative;
+      padding-left: 0;
+
+      @include mobile() {
+        &:first-child {
+          background-image: url('/src/assets/img/ajuda-contato-bg-mobile.png');
+          background-size: 100% auto;
+          background-repeat: no-repeat;
+          max-width: 100% !important;
+          height: 100vh;
+        }
+      }
+
+      .ajc-content {
+        position: absolute;
+        top: rdm(80);
+        left: rdm(190);
+        width: rdm(540);
+
+        @include mobile() {
+          position: relative;
+          top: unset;
+          left: unset;
+          width: auto;
+          padding: rm(90) rm(20) rm(40);
+
+          h1 {
+            text-align: center;
+            margin-bottom: rm(30);
+          }
+        }
+
+        .subtitle1 {
+          font-size: 1vw;
+
+          @include mobile() {
+            font-size: rm(16);
+            text-align: center;
+          }
+        }
+      }
+
+      .ajc-info {
+        position: absolute;
+        bottom: rdm(30);
+        left: rdm(190);
+        width: rdm(260);
+        text-align: left;
+
+        @include mobile() {
+          position: relative;
+          top: unset;
+          left: unset;
+          width: auto;
+          text-align: center;
+        }
+
+        ul {
+          padding: 0;
+
+          @include mobile() {
+            display: inline-block;
+            width: 80%;
+            text-align: left;
+          }
+        }
+
+        li {
+          margin-bottom: rdm(22);
+
+          @include mobile() {
+            margin-bottom: rm(20);
+          }
+
+          img {
+            margin-right: rdm(7);
+          }
+        }
+
+        a {
+          margin-right: rdm(15);
+          text-decoration: none;
+        }
+      }
+
+      .ajc-form-content {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: rdm(746);
+        max-width: 65%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: rdm(20);
+
+        @include mobile() {
+          position: relative;
+          top: unset;
+          left: unset;
+          width: auto;
+          transform: none;
+          width: 100%;
+          max-width: 80%;
+          margin: 0 auto;
+          padding: rm(15);
+        }
+      }
+
+      .btn {
+        width: 100%;
+
+        @include mobile() {
+          text-align: center;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

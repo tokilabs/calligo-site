@@ -1,0 +1,232 @@
+#homeSteps {
+  background: url('/src/assets/img/linha.svg') no-repeat top;
+  background-position: center rdm(117);
+  background-size: 77% auto;
+  padding: rdm(50) 0 rdm(180);
+  margin-top: rdm(60);
+  max-width: 83.4%;
+
+  @include mobile() {
+    max-width: 90%;
+    margin: 0 auto rm(35);
+    text-align: center;
+    background: none;
+
+    &.mobile {
+      display: block !important;
+    }
+
+    .container {
+      max-width: calc(100vw - 12px) !important;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: rm(30);
+    }
+
+    .homeSteps_content {
+      background-image: url('/src/assets/img/linha-mobile.png');
+      background-repeat: no-repeat;
+      background-size: auto 97%;
+      background-position: rm(45) 0;
+    }
+  }
+
+  .bubble {
+    display: block;
+    width: rdm(150);
+    height: rdm(150);
+    margin: 0 auto rdm(20);
+    line-height: rdm(150);
+    color: #fff;
+    font-size: rdm(80);
+    border-radius: 50%;
+    font-family: $serif-fs;
+
+    @include mobile() {
+      width: rm(75);
+      height: rm(75);
+      margin: 0 auto rm(10);
+      line-height: 1.8;
+      font-size: rm(40);
+    }
+  }
+
+  h4 {
+    padding: 0 1.4em;
+  }
+
+  .col {
+    &:nth-child(even) {
+      .bubble {
+        margin-top: 4.64583vw;
+      }
+    }
+
+    &:nth-child(1) {
+      .bubble {
+        background: $primary;
+      }
+    }
+    &:nth-child(2) {
+      .bubble {
+        background: $secondary;
+      }
+    }
+    &:nth-child(3) {
+      .bubble {
+        background: $yellow;
+      }
+    }
+    &:nth-child(4) {
+      .bubble {
+        background: $pink;
+      }
+    }
+  }
+
+  @include mobile() {
+    .row {
+      &:nth-child(even) {
+        .bubble {
+          margin-top: 4.64583vw;
+        }
+      }
+
+      &:nth-child(1) {
+        margin-bottom: rm(30);
+
+        .bubble {
+          background: $primary;
+        }
+      }
+      &:nth-child(2) {
+        margin-bottom: rm(30);
+
+        .bubble {
+          background: $secondary;
+        }
+      }
+      &:nth-child(3) {
+        margin-bottom: rm(30);
+
+        .bubble {
+          background: $yellow;
+        }
+      }
+      &:nth-child(4) {
+        margin-bottom: rm(30);
+
+        .bubble {
+          background: $pink;
+        }
+      }
+    }
+  }
+}
+
+#homeWhyTherapy {
+  padding-top: rdm(110);
+  text-align: left;
+  padding-bottom: rdm(300);
+
+  .row {
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    text-align: left;
+    margin-bottom: 1.5em;
+  }
+
+  h5 {
+    text-align: left;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .offset-draw {
+    img {
+      margin-top: rdm(-60);
+    }
+  }
+  @include mobile() {
+    padding: rm(30) 0;
+
+    .ilustra_whyTherapy {
+      margin-bottom: rm(35);
+    }
+
+    .whytherapy-icon {
+      padding-right: rm(10);
+    }
+  }
+}
+
+#homeSearch {
+  padding-top: rdm(246);
+  text-align: left;
+  padding-bottom: rdm(300);
+  background: url('/src/assets/img/bg-search-home.png') no-repeat top center;
+  background-size: cover;
+  color: #fff;
+
+  @include mobile() {
+    padding-top: rm(180);
+    padding-bottom: rm(100);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: rdm(12);
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: rdm(40);
+  }
+
+  form {
+    position: relative;
+    text-align: center;
+    max-width: rdm(763);
+    margin: 0 auto;
+
+    @include mobile() {
+      max-width: 85%;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.5em;
+      top: 0.5em;
+      font-size: 2em;
+      color: rgba(76, 77, 93, 1);
+
+      @include mobile() {
+        font-size: rm(22) !important;
+      }
+    }
+
+    input {
+      margin-bottom: rdm(40);
+      text-indent: rdm(40);
+
+      @include mobile() {
+        margin-bottom: rm(20);
+        text-indent: rm(20);
+      }
+    }
+
+    button {
+      width: rdm(284);
+
+      @include mobile() {
+        width: 100%;
+      }
+    }
+  }
+}

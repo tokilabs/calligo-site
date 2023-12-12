@@ -1,0 +1,490 @@
+#intro-calligo {
+  padding: 0;
+  position: relative;
+  background-color: #fff;
+
+  @include mobile() {
+    background-color: #fecd6a;
+    padding-top: rm(80);
+    margin-bottom: rm(45);
+  }
+
+  .intro-image {
+    img {
+      width: 100%;
+      position: relative;
+      bottom: rm(-30);
+    }
+  }
+
+  h1 {
+    margin: rdm(40) 0;
+
+    @include mobile() {
+      margin: rm(25);
+    }
+  }
+
+  .brandname {
+    @include mobile() {
+      padding-left: rm(25);
+    }
+  }
+
+  .slider-image {
+    width: 100%;
+  }
+
+  .slick-dots {
+    bottom: rdm(190);
+    z-index: 600;
+    width: 55%;
+
+    @include mobile() {
+      position: relative;
+      bottom: auto;
+      width: 100%;
+      padding-top: rdm(20);
+    }
+  }
+
+  .intro-slider {
+    width: 100%;
+  }
+
+  .intro-text {
+    &.hidden_content {
+      display: none !important;
+    }
+
+    @include desktop() {
+      position: absolute;
+      top: 0;
+      left: 5%;
+      transform: translateY(-50%);
+      z-index: 500;
+      top: 50%;
+      width: 100%;
+    }
+
+    h2 {
+      color: $primary;
+    }
+
+    .logo {
+      fill: $primary;
+
+      path {
+        fill: $primary;
+      }
+    }
+
+    .btn {
+      text-transform: uppercase;
+    }
+
+    .play_video {
+      background-color: transparent;
+      border: 0;
+      margin-left: rdm(15);
+      text-transform: uppercase;
+
+      @include mobile() {
+        margin: rm(35) 0;
+      }
+
+      img {
+        margin-right: rdm(5);
+        display: inline-block;
+      }
+    }
+  }
+
+  .help-button {
+    position: fixed;
+    right: rdm(20);
+    bottom: rdm(110);
+    width: rdm(85);
+    z-index: 998;
+
+    img {
+      width: 100%;
+    }
+
+    @include mobile() {
+      width: rm(44);
+      right: rm(10);
+      bottom: rm(10);
+    }
+  }
+
+  &.therapist-page {
+    background-color: #5c02ff;
+
+    .intro-text {
+      .svg_h1 {
+        position: relative;
+        height: 60px;
+        width: 320px;
+        left: 0;
+
+        .icon_heart {
+          position: absolute;
+          left: 80%;
+          top: -80px;
+        }
+      }
+
+      .logo {
+        position: absolute;
+        left: 80px;
+        top: 0;
+        fill: $white;
+        transform: scale(2.5);
+
+        path {
+          fill: $white;
+        }
+      }
+
+      .btn-primary {
+        color: #5c02ff;
+        background-color: #fff;
+      }
+    }
+
+    .th-p_undertitle {
+      @include typoConfiguration(56, 1, left, -0.01em);
+
+      @include mobile() {
+        @include typoConfiguration(30, 1, center, -0.05em);
+        margin-top: rm(25);
+      }
+    }
+  }
+}
+
+#for-whom {
+  padding-top: rdm(150);
+
+  @include mobile() {
+    max-width: calc(100vw - 24px) !important;
+  }
+
+  > .row {
+    &:first-child {
+      margin-bottom: rdm(120);
+    }
+  }
+
+  .for-whom-ilustration {
+    width: 100%;
+
+    @include mobile() {
+      margin-bottom: rm(20);
+    }
+  }
+
+  h2 {
+    letter-spacing: -0.06em;
+    line-height: 1.3;
+
+    @include mobile() {
+      margin-bottom: rm(14);
+    }
+  }
+
+  h3 {
+    line-height: 1.3;
+  }
+
+  .for-whom_text-mob {
+    @include mobile() {
+      text-align: right !important;
+      margin-bottom: rm(50);
+
+      h2,
+      p {
+        text-align: right !important;
+      }
+    }
+  }
+
+  .tag {
+    font-size: 0.8em;
+    padding: rdm(10) rdm(14);
+    display: inline-block;
+    border-radius: 10px;
+    margin-bottom: rdm(15);
+
+    @include mobile() {
+      margin-bottom: rm(20);
+      padding: rm(4) rm(10);
+    }
+
+    p {
+      margin-bottom: 0;
+
+      @include mobile() {
+        font-size: rm(14);
+      }
+    }
+
+    &.primary {
+      background-color: rgba(175, 133, 255, 0.4);
+    }
+
+    &.secondary {
+      background-color: rgba(57, 203, 142, 0.35);
+    }
+  }
+
+  .btn {
+    font-weight: bold;
+  }
+
+  .quote-block {
+    position: relative;
+    padding: rdm(130) rdm(160);
+    margin: rdm(90) 0;
+    background: url('/src/assets/img/bg-quote.png') no-repeat;
+    background-size: 100% 100%;
+
+    @include mobile() {
+      padding: rm(25) rm(16);
+      margin: rm(9) 0;
+      background: url('/src/assets/img/bg-quote-mobile.png') no-repeat;
+    }
+
+    .for-whom-quote {
+      position: absolute;
+      max-width: rdm(150);
+
+      &:first-child {
+        top: 0;
+        left: 0;
+      }
+
+      &:last-child {
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    .quote-text {
+      font-size: 2em;
+      margin-bottom: rdm(50);
+
+      @include mobile() {
+        font-size: rm(16);
+        text-align: center !important;
+      }
+    }
+
+    .btn {
+      width: rdm(300);
+
+      @include mobile() {
+        width: auto;
+        margin-top: rm(20);
+      }
+    }
+  }
+}
+
+#therapist {
+  .therapist_about {
+    width: rdm(1550);
+    margin: 0 auto;
+
+    @include mobile() {
+      width: rm(280);
+    }
+
+    .therapist_about-header {
+      margin-top: 160px;
+      margin-bottom: 100px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include mobile() {
+        width: 100%;
+        margin-top: rm(90);
+        margin-bottom: rm(70);
+      }
+
+      .body1 {
+        width: 66%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include mobile() {
+          width: 100%;
+          text-align: left;
+          margin-top: rm(20);
+        }
+      }
+    }
+
+    .thab-image {
+      width: rdm(80);
+      display: inline-block;
+      vertical-align: top;
+
+      @include mobile() {
+        width: rm(54);
+      }
+    }
+
+    .thab-text-container {
+      display: inline-block;
+      vertical-align: top;
+      width: rdm(335);
+      padding-left: rd(20);
+      box-sizing: border-box;
+      text-align: left;
+
+      @include mobile() {
+        width: 78%;
+        padding-left: rm(10);
+        padding-bottom: rm(30);
+      }
+
+      h5 {
+        text-align: left;
+      }
+    }
+  }
+
+  .therapist-care {
+    width: rdm(1550);
+    padding: rdm(200) 0 rdm(130) rdm(100);
+    margin: 150px auto 50px;
+    background-image: url('/src/assets/img/bg_care.png');
+    background-size: 100% 100%;
+
+    @include mobile() {
+      width: rm(280);
+      padding: 12vw 6vw;
+      background-image: url('/src/assets/img/bg-care-mobile.png');
+
+      .for-whom-ilustration {
+        margin-bottom: rm(30);
+      }
+    }
+
+    .btn-primary {
+      color: #5c02ff;
+      background-color: #fff;
+
+      @include mobile() {
+        margin-bottom: rm(30);
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+#manifest {
+  @include mobile() {
+    #intro-calligo {
+      background-color: #5c02ff;
+    }
+  }
+
+  .manifest-container {
+    padding-top: 120px;
+    padding-bottom: 30px;
+    background-image: url('/src/assets/img/manifesto-bg.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    text-align: left;
+
+    @include mobile() {
+      background: none;
+      padding-top: rm(90);
+    }
+
+    .manifest-text {
+      width: rdm(800);
+      margin: 0 auto;
+
+      @include mobile() {
+        width: rm(270);
+
+        h1 {
+          font-size: rm(32);
+        }
+      }
+
+      .h3 {
+        margin: 90px 0 30px;
+
+        @include mobile() {
+          letter-spacing: -0.07em;
+          font-size: rm(30);
+          margin-top: rm(50);
+        }
+      }
+
+      p {
+        text-align: left;
+
+        @include mobile() {
+          &.h3 {
+            font-size: rm(26);
+          }
+        }
+      }
+    }
+  }
+}
+
+#videomodal {
+  .modal-dialog {
+    max-width: rdm(1280);
+
+    .modal-body {
+      padding: 0;
+    }
+  }
+
+  iframe,
+  video {
+    object-fit: fill;
+    width: rdm(1280);
+    height: rdm(768);
+  }
+}
+
+#terms {
+  padding-top: rdm(150);
+
+  .container {
+    width: rdm(1208);
+
+    @include mobile() {
+      width: rm(280);
+    }
+  }
+
+  .h3 {
+    text-align: center;
+
+    @include mobile() {
+      font-size: rm(20);
+    }
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  @include mobile() {
+    padding-top: rm(85);
+  }
+}

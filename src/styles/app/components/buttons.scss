@@ -1,0 +1,295 @@
+@mixin box-buttons {
+    &-primary, &-secondary {
+        &:disabled {
+            opacity: 1;
+            color: $gray50;
+            background-color: $gray10;
+            border-color: transparent;
+        }
+    }
+
+    &-primary {
+        &:hover {
+            border-color: transparent;
+            background-color: $primary40;
+        }
+
+        &:focus, &:active {
+            border-color: transparent;
+            background-color: $primary30;
+        }
+    }
+
+    &-secondary {
+        &:hover {
+            border-color: transparent;
+            color: $dark;
+            background-color: $secondary40;
+        }
+
+        &:focus, &:active {
+            border-color: transparent;
+            background-color: $secondary30;
+        }
+
+    }
+}
+
+@mixin bg-box-buttons {
+    &-primary {
+        color: $primary;
+        background-color: $white;
+
+        &:hover {
+            border-color: transparent;
+            background-color: $primary5;
+            color: $primary40;
+        }
+
+        &:focus, &:active {
+            border-color: transparent;
+            color: $primary50;
+            background-color: $primary10;
+        }
+    }
+
+    &-secondary {
+        background-color: $secondary30;
+
+        &:hover {
+            border-color: transparent;
+            background-color: $secondary20;
+            color: $dark;
+        }
+
+        &:focus, &:active {
+            border-color: transparent;
+            color: $dark;
+            background-color: $secondary10;
+        }
+    }
+}
+
+@mixin outline-buttons {
+    &-outline {
+        &-primary, &-secondary {
+            border-color: $gray70;
+
+            &:hover {
+                color: $primary50;
+                border-color: $gray70;
+            }
+
+            &:focus, &:active {
+                color: $primary50;
+                border-color: $gray70;
+            }
+
+            &:disabled {
+                border-color: $gray70;
+            }
+        }
+
+        &-primary {
+            color: $primary50;
+
+            &:hover {
+                background-color: $primary10;
+            }
+
+            &:focus, &:active {
+                background-color: $primary20;
+            }
+
+            &:disabled {
+                color: $gray50;
+            }
+        }
+
+        &-secondary {
+            color: $dark;
+
+            &:hover {
+                background-color: $secondary10;
+            }
+
+            &:focus, &:active {
+                background-color: $secondary20;
+            }
+
+            &:disabled {
+                color: $gray70;
+            }
+        }
+    }
+}
+
+@mixin bg-primary-outline-buttons {
+    &-outline {
+        &-primary {
+            border-color: $white;
+            color: $white;
+
+            &:hover {
+                background-color: $primary40;
+            }
+
+            &:active, &:focus {
+                background-color: $primary30;
+            }
+
+            &:disabled {
+                color: $gray30;
+                border-color: $gray30;
+            }
+        }
+    }
+}
+
+@mixin bg-secondary-outline-buttons {
+    &-outline {
+        &-secondary {
+            &:hover {
+                background-color: $secondary40;
+            }
+
+            &:active, &:focus {
+                background-color: $secondary30;
+            }
+
+            :disabled {
+                color: $gray70;
+                background-color: $gray70;
+            }
+        }
+    }
+}
+
+@mixin text-buttons {
+    &.btn-light {
+        &-primary, &-secondary {
+            &:disabled {
+                color: $gray50;
+            }
+        }
+
+        &-primary {
+            color: $primary50;
+
+            &:hover {
+                color: $primary50;
+                background-color: $primary5;
+            }
+
+            &:focus, &:active {
+                color: $primary50;
+                background-color: $primary10;
+            }
+        }
+
+        &-secondary {
+            &:hover {
+                background-color: $secondary10;
+            }
+
+            &:active, &:focus {
+                background-color: $secondary20;
+            }
+        }
+    }
+}
+
+@mixin bg-primary-text-buttons {
+    &.btn-light {
+        &-primary {
+            color: $white;
+
+            &:disabled {
+                color: $gray30;
+            }
+
+            &:hover {
+                background-color: $primary40;
+            }
+
+            &:focus, &:active {
+                background-color: $primary30;
+            }
+        }
+    }   
+}
+
+@mixin bg-secondary-text-buttons {
+    &.btn-light {
+        &-secondary {
+            &:disabled {
+                color: $gray70;
+            }
+    
+            &:hover {
+                background-color:$secondary40;
+            }
+    
+            &:hover, &:focus {
+                background-color: $secondary30;
+            }
+        }
+    }
+}
+
+#buttons {
+    .row {
+        div {
+            padding: 8px;
+        }
+    }
+}
+
+.btn {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: .6875em  1.25em;
+    display: inline-flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+
+    @include box-buttons;
+    @include outline-buttons;
+    @include text-buttons;
+}
+
+.bg {
+    &__primary, &__secondary {
+        .btn {
+            &-primary, &-secondary {
+                &:disabled {
+                    opacity: 1;
+                    color: $gray50;
+                    background-color: $gray10;
+                }
+            }
+
+        }
+    }
+
+    &__primary, &__secondary {
+        .btn {
+            @include bg-box-buttons;
+        }
+    }
+
+    &__primary {
+        .btn {
+            @include bg-primary-outline-buttons;
+            @include bg-primary-text-buttons;
+        }
+    }
+
+    &__secondary {
+        .btn {
+            @include bg-secondary-outline-buttons;
+            @include bg-secondary-text-buttons;
+        }
+    }
+}

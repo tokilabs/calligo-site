@@ -1,0 +1,41 @@
+footer {
+	text-align: left;
+
+	.footer-mobile {
+		@include mobile() {
+			width: 100%;
+			padding-top: rm(60);
+		}
+	}
+
+	&.container-fluid {
+		@include desktop(){
+			padding: rdm(40) rdm(48);
+		}
+	}
+
+	h4 {
+		font-family: $sans-fs !important;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.nav-link {
+		padding: .3rem 0;
+		color: $dark !important;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.social {
+		margin-bottom: 3em;
+
+		a {
+			margin-right: 1em;
+		}
+	}
+}

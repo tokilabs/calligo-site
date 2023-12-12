@@ -1,0 +1,308 @@
+html,
+body {
+  display: block;
+  text-align: center;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  font-size: 16px;
+  min-height: 100vh;
+  position: relative;
+  background: #FFF;
+  font-family: $sans-fs;
+
+  @include desktop(){
+    font-size: rdm(16);
+  }
+
+}
+
+html.apiLoading {
+  cursor: wait;
+
+  body {
+    pointer-events: none !important;
+  }
+}
+
+body {
+  @include desktop(){
+    // padding-top: 80px;
+  }
+  padding-right: 0 !important;
+
+  main.main {
+    min-height: 100vh;
+    background-color: #FFFFFF;
+
+    @include mobile() {
+      background-color: #f6f6f6;
+    }
+  }
+}
+
+ul {
+ list-style: none; 
+}
+
+img.brandname {
+  max-width: rdm(240);
+
+  @include mobile() {
+    max-width: rm(209);
+  }
+}
+
+.fixedPos {
+  position: fixed !important;
+}
+
+/* Bootstrap overrides */
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #f1ebce;
+    border: 1px solid #f1ebce;
+}
+
+.select2-container.select2-container--open {
+  text-align: left;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #7b47f9;
+    color: white;
+}
+
+.btn {
+  &.btn-bold {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.valign-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-end {
+
+}
+
+.main {
+  min-height: 100vh;
+}
+
+
+.no-gutter > [class*='col'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.section-placeholder {
+  opacity: 1;
+  pointer-events: none;
+
+  width: 100%;
+  height: auto;
+
+  &.fs-placeholder {
+    max-height: 100vh;
+    object-fit: cover;
+  }
+}
+
+.container {
+
+    &.flex-fullcentered {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      align-content: center;
+      justify-content: center;
+      align-items: center;  
+      min-height: 100vh;
+    }
+}
+
+/* slick */
+.slick-dots {
+  li {
+    height: rdm(20);
+    width: rdm(20);
+    margin: 0 rdm(7);
+
+    @include mobile() {
+      height: rm(20);
+      width: rm(20);
+      margin: 0 rm(5);
+    }
+
+    button {
+      width: rdm(20);
+      height: rdm(20);
+      transition: all .2s linear;
+
+      border-radius: 50%;
+      background: $white;
+
+      color: transparent !important;
+
+      @include mobile() {
+        height: rm(20);
+        width: rm(20);
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &.slick-active {
+      button {
+        background: $primary;
+      }
+    }
+  }
+}
+
+
+/* SVG Coloring */
+
+svg {
+  &.logo {
+    path {
+      fill: $white;
+    }
+
+    &.primary {
+      path {
+        fill: $primary;
+      }
+    }
+  }
+}
+
+.design-system-page {
+  #icons_content {
+    ul {
+      padding: 0 !important;
+
+      li {
+        margin-bottom: .3em;
+
+        .caption {
+          position: relative;
+          left: .8em;
+          top: -.65em;
+        }
+      }
+    }
+  }
+}
+
+.btn-round-icon {
+  width: auto !important;
+  border-radius: 50%;
+  padding: .4em !important;
+  line-height: 0;
+  border: 5px solid #FFF !important;
+}
+
+.material-icons-outlined {
+  font-size: 1.2vw !important;
+}
+
+.desktop {
+  @include desktop() {
+    display: inline-block !important;
+
+    &.desktopFlex {
+      display: flex !important;
+    }
+  }
+
+  @include mobile() {
+    display: none !important;
+  }
+}
+
+.mobile {
+  @include desktop() {
+    display: none !important;
+  }
+
+  @include mobile() {
+    display: inline-block !important;
+
+    &.mobileFlex {
+      display: flex !important;
+    }
+  }
+}
+
+.mobile-centered {
+  @include mobile() {
+    text-align: center !important;
+  }
+}
+
+.loader {
+  position:  fixed;
+  display:  block;
+  width:  100%;
+  height:  100%;
+  background:  #FFF;
+  transition: all .4s linear;
+  pointer-events: initial;
+  z-index: 9999999;
+
+  .lds-heart {
+    display: inline-block;
+    position: relative;
+    width: rdm(100);
+    height: rdm(100);
+    /*transform: rotate(45deg);*/
+    transform-origin: 40px 40px;
+
+    img {
+      width: 100%;
+      transform-origin: 40px 40px;
+      animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  }
+  
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  .center {
+      position:  absolute;
+      display:  block;
+      top:  50%;
+      left:  50%;
+      transform:  translate(-50%, -50%);
+  }
+
+  &.loaded {
+      opacity: 0;
+      pointer-events: none;
+  }
+}

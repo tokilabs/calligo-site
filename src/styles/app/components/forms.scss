@@ -1,0 +1,613 @@
+.form-error {
+  border: 1px solid $error;
+}
+
+form._submit-attempted {
+  input,
+  select,
+  textarea,
+  .form-field {
+    &:invalid {
+      border: 1px solid $error;
+    }
+  }
+}
+
+img.profile-image {
+  max-width: 100%;
+  width: rdm(220);
+  height: rdm(220);
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.error-message,
+div.error,
+.help-message {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: $error;
+  text-indent: 5px;
+  margin-top: 3px;
+}
+
+.help-message {
+  color: $gray70;
+}
+
+div.error {
+  margin-bottom: 5px;
+}
+
+/* MD Floating Label Style */
+form {
+  .col {
+    padding-top: 1em;
+  }
+}
+
+.input {
+  &-calendar {
+    padding-left: rdm(44);
+    box-sizing: border-box;
+  }
+}
+
+.img-upload-container {
+  position: relative;
+  overflow: hidden;
+
+  .imgPreview {
+    width: rdm(220);
+    height: rdm(220);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.2s linear;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .btn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  input {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    padding: 45px 0 0 45px;
+    right: 5px;
+    bottom: 5px;
+    cursor: pointer;
+  }
+}
+
+.form-control {
+  border-color: $gray70;
+}
+
+.form-control:focus {
+  border-color: transparent;
+}
+
+.form-outline {
+  position: relative;
+  margin-bottom: 1.3em;
+
+  &__icon {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+  }
+
+  .error-message,
+  .help-message {
+    position: absolute;
+    bottom: 1.8em;
+    right: 0.75rem;
+    display: none;
+  }
+
+  .help-message {
+    display: initial;
+  }
+
+  &.value-error {
+    .form-control,
+    .form-select {
+      &.active ~ .form-label,
+      &:focus ~ .form-label {
+        color: $error;
+      }
+    }
+  }
+
+  .form-control {
+    & ~ .form-label {
+      position: absolute;
+      top: 0.8em;
+      max-width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      left: 1rem;
+      pointer-events: none;
+      transform-origin: 0 0;
+      transition: all 0.2s ease-out;
+      color: $gray70;
+      margin-bottom: 0;
+
+      font-family: Open Sans;
+      font-size: rdm(16);
+
+      @include mobile() {
+        font-size: rm(12);
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.08rem rgb(92, 2, 255);
+      outline: 0;
+    }
+
+    &:focus ~ .form-label {
+      color: $primary;
+    }
+
+    &[placeholder] ~ .form-label,
+    &[type='date'] ~ .form-label,
+    &[type='time'] ~ .form-label,
+    &.active ~ .form-label,
+    &:disabled ~ .form-label,
+    &:focus ~ .form-label {
+      transform: translateY(-1.55em);
+      font-size: 0.625vw;
+      background-color: $white;
+      font-weight: 400;
+      padding-left: 0.45em;
+      padding-right: 0.45em;
+      left: 0.7rem;
+
+      @include mobile() {
+        font-size: rm(12);
+      }
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: white;
+      border-color: $gray30;
+      color: $gray30;
+
+      & ~ .form-label {
+        color: $gray50;
+      }
+    }
+  }
+
+  .form-select,
+  select {
+    &:focus {
+      box-shadow: 0 0 0 0.08rem rgb(92, 2, 255);
+      outline: 0;
+    }
+
+    & ~ .form-label {
+      position: absolute;
+      top: 0.8em;
+      max-width: 90%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      left: 1rem;
+      pointer-events: none;
+      transform-origin: 0 0;
+      transition: all 0.2s ease-out;
+      color: $gray70;
+      margin-bottom: 0;
+
+      font-family: Open Sans;
+      font-size: rdm(16);
+
+      @include mobile() {
+        font-size: rm(12);
+      }
+    }
+
+    &:focus ~ .form-label {
+      color: $primary;
+    }
+
+    &.active ~ .form-label,
+    &:disabled ~ .form-label,
+    &:focus ~ .form-label {
+      transform: translateY(-1.55em);
+      font-size: 0.625vw;
+      background-color: $white;
+      font-weight: 400;
+      padding-left: 0.45em;
+      padding-right: 0.45em;
+      left: 0.7rem;
+
+      @include mobile() {
+        font-size: rm(12);
+      }
+    }
+
+    &:disabled {
+      background-image: escape-svg($form-select-indicator-hover);
+      background-color: white;
+      border-color: $gray30;
+      color: $gray30;
+
+      & ~ .form-label {
+        color: $gray50;
+      }
+    }
+  }
+
+  &.value-error {
+    .form-control,
+    .form-select {
+      box-shadow: 0 0 0 0.08rem $error;
+      border-color: transparent;
+    }
+
+    .error-message {
+      display: initial;
+    }
+
+    .help-message {
+      display: none;
+    }
+  }
+}
+
+.form-check {
+  display: flex;
+  column-gap: 0.6em;
+  align-items: flex-start;
+
+  .form-check-input {
+    float: none;
+    width: 1.25em;
+    min-width: 1.25em;
+    height: 1.25em;
+    border-radius: 0.3em;
+    margin-top: 0;
+    border-color: $gray70;
+
+    &:disabled:checked {
+      background-color: $gray70;
+    }
+
+    &:checked[type='radio'],
+    &:disabled[type='radio'] {
+      background-color: $white;
+    }
+
+    &:checked[type='radio'] {
+      background-image: escape-svg($form-radio-checked-enabled-bg-image);
+    }
+
+    &:disabled:checked[type='radio'] {
+      background-image: escape-svg($form-radio-checked-disabled-bg-image);
+    }
+  }
+
+  label {
+    line-height: 1.4;
+  }
+}
+
+form {
+  .row {
+    .col:first-child {
+      padding-left: 0 !important;
+    }
+
+    .col:last-child {
+      padding-right: 0 !important;
+    }
+
+    button,
+    .btn {
+      width: 100%;
+      display: inline-block;
+    }
+  }
+}
+
+#accountIndexForm {
+  .multiple_select-container {
+    padding-top: 50px;
+    position: relative;
+    width: 100%;
+
+    .select2-container--default .select2-search--inline .select2-search__field {
+      margin-top: 0;
+      &:disabled {
+        background-color: $white;
+        border-color: $gray30;
+        color: $gray30;
+      }
+    }
+
+    .select2-container--default .select2-selection--multiple {
+      background-color: transparent;
+    }
+
+    .select2-selection {
+      border: 0;
+
+      .select2-selection__choice {
+        padding: 4px 16px;
+        font-size: 0.9rem;
+        border-radius: 50px;
+        background-color: $gray10;
+        position: relative;
+        padding-right: 24px;
+        border: unset;
+        font-family: $btn-font-family;
+
+        span {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.6rem;
+          color: #4c4d5d;
+        }
+      }
+    }
+
+    .select2-search {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0;
+
+      input {
+        width: 100% !important;
+        padding: 10px 50px;
+      }
+    }
+    .search-icon {
+      position: absolute;
+      left: 0.7em;
+      top: 0.4em;
+      color: $gray70;
+      font-size: 2em !important;
+    }
+
+    input,
+    select {
+      background-color: transparent;
+      border: 1px solid #4c4d5d;
+      border-radius: 5px;
+
+      option {
+        color: $primary;
+      }
+    }
+
+    .form-select {
+      background-image: url('/src/assets/img/arrow-down.svg');
+
+      &.active ~ .form-label,
+      &:focus ~ .form-label {
+        color: $gray70;
+        background-color: white;
+      }
+    }
+
+    .form-label {
+      left: 4rem;
+      color: $gray70;
+      transform: translateY(0.1em);
+      font-size: rdm(16);
+      @include mobile() {
+        font-size: rm(12);
+      }
+    }
+
+    .select2-container.select2-container {
+      &--focus ~ .form-label {
+        transform: translateY(-1.55em);
+        color: $gray70;
+        background-color: white;
+        font-weight: 400;
+        padding-left: 0.45em;
+        padding-right: 0.45em;
+        left: 0.7rem;
+        font-size: 0.625vw;
+      }
+      &--disabled ~ .form-label {
+        color: $gray50;
+      }
+    }
+  }
+}
+
+// Styling Cross-Browser Compatible Range Inputs with Sass
+// Github: https://github.com/darlanrod/input-range-sass
+// Author: Darlan Rod https://github.com/darlanrod
+// Version 1.5.2
+// MIT License
+
+$track-color: #955cff !default;
+$thumb-color: #5c02ff !default;
+
+$thumb-radius: 12px !default;
+$thumb-height: 24px !default;
+$thumb-width: 24px !default;
+$thumb-shadow-size: 4px !default;
+$thumb-shadow-blur: 4px !default;
+$thumb-shadow-color: rgba(0, 0, 0, 0.2) !default;
+$thumb-border-width: 2px !default;
+$thumb-border-color: #eceff1 !default;
+
+$track-width: 100% !default;
+$track-height: 8px !default;
+$track-shadow-size: 1px !default;
+$track-shadow-blur: 1px !default;
+$track-shadow-color: rgba(0, 0, 0, 0.2) !default;
+$track-border-width: 2px !default;
+$track-border-color: #cfd8dc !default;
+
+$track-radius: 5px !default;
+$contrast: 5% !default;
+
+$ie-bottom-track-color: darken($track-color, $contrast) !default;
+
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow:
+    $shadow-size $shadow-size $shadow-blur $shadow-color,
+    0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+@mixin track {
+  cursor: default;
+  height: $track-height;
+  transition: all 0.2s ease;
+  width: $track-width;
+}
+
+@mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  background: $thumb-color;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  box-sizing: border-box;
+  cursor: default;
+  height: $thumb-height;
+  width: $thumb-width;
+}
+
+[type='range'] {
+  -webkit-appearance: none;
+  background: transparent;
+  margin: $thumb-height / 2 0;
+  width: $track-width;
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &:focus {
+    outline: 0;
+
+    &::-webkit-slider-runnable-track {
+      background: lighten($track-color, $contrast);
+    }
+
+    &::-ms-fill-lower {
+      background: $track-color;
+    }
+
+    &::-ms-fill-upper {
+      background: lighten($track-color, $contrast);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: (
+      (-$track-border-width * 2 + $track-height) / 2 - $thumb-height / 2
+    );
+  }
+
+  &::-moz-range-track {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    @include track;
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    height: $track-height / 2;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    background: transparent;
+    border-color: transparent;
+    border-width: ($thumb-height / 2) 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $ie-bottom-track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: ($track-radius * 2);
+  }
+
+  &::-ms-fill-upper {
+    @include shadow(
+      $track-shadow-size,
+      $track-shadow-blur,
+      $track-shadow-color
+    );
+    background: $track-color;
+    border: $track-border-width solid $track-border-color;
+    border-radius: ($track-radius * 2);
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+    margin-top: $track-height / 4;
+  }
+
+  &:disabled {
+    &::-webkit-slider-thumb,
+    &::-moz-range-thumb,
+    &::-ms-thumb,
+    &::-webkit-slider-runnable-track,
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      cursor: not-allowed;
+    }
+  }
+}
+
+#cropModal {
+  .cr-boundary {
+    width: 100% !important;
+  }
+
+  .croppie-container .cr-slider-wrap {
+    width: 100%;
+  }
+}

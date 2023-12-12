@@ -1,0 +1,521 @@
+.box {
+    &.box__calendar {
+        padding: 0 !important;
+    }
+}
+
+.calendar {
+    &__block {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &__header {
+        display: flex;
+        min-width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        &-selector {
+            text-align: center;
+            margin-left: auto; // v1
+            margin-right: auto; // v1
+
+            #selected-month {
+                font-size: 2rem;
+                padding: 0;
+                margin: 0;
+            }
+
+            #selected-year {
+                text-align: center;
+            }
+        }
+
+        &-filter {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+
+            &__search {
+                color: $gray70;
+                text-decoration: none;
+
+                &:hover {
+                    color: $gray70;
+                    opacity: .8; 
+                }
+            }
+
+            .btn-outline-primary {
+                color: $gray70;
+            }
+
+            .btn-labeled {
+                display: flex;
+                column-gap: 5px;
+
+                .material-icons-outlined {
+                    font-size: 1.6rem !important;
+                }
+            }
+        }
+    }
+
+    &__btn-group {
+        border-radius: 5px;
+        background-color: $gray10;
+
+        &__item {
+            padding: 5px;
+
+            .btn {
+                border-radius: 5px;
+                height: 38px;
+                width: 100px;
+                line-height: .65rem;
+
+                &:hover, &.active {
+                    color: $primary;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &__arrows {
+        display: flex;
+
+        a {
+            color: $gray70;
+        }
+
+        .material-icons-outlined {
+            font-size: 2.5rem !important;
+        }
+    }
+
+    &__weekdays {
+        display: flex;
+        justify-content: space-between;
+
+        &-item {
+            flex: 1;
+            text-align: center;
+            padding: 0.875rem 0;
+            font-weight: bold;
+        }
+
+        &--weekly {
+            .calendar__weekdays-item:first-child {
+                flex: 0 0 70px;
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        border-top: 1px solid $gray30;
+
+        &-item {
+            position: relative;
+            width: 14.285%;
+            color: $dark;
+            font-weight: bold;
+            box-sizing: border-box;
+            padding: 0.68rem;
+            text-align: center;
+            border-right: 1px solid $gray30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:nth-child(7) {
+                border-right: 0;
+            }
+
+            &.previous-month {
+                color: $gray50;
+            }
+
+            &.is-current-day {
+                color: $primary50;
+
+                .day-item {
+                    &__title {
+                        span {
+                            background-color: rgba(149, 92, 255, 0.1);
+                        }
+                    }
+                }
+            }
+
+            .day-item {
+                &__title {
+                    span {
+                        width: 2rem;
+                        height: 2rem;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                        border-radius: 50%;
+                    }
+                }
+
+                &__events {
+                    color: $dark;
+                    font-weight: 400;
+                    margin-top: 10px;
+                    margin-bottom: auto;
+                    text-align: left;
+                    width: 100%;
+
+                    &-item {
+                        cursor: pointer;
+                        padding: 2px 1rem;
+                        margin-bottom: 5px;
+                        border-radius: 5px;
+
+                        &__patient {
+                            color: $dark;
+                            display: block;
+                        }
+
+                        &__time {
+                            color: $gray70;
+                            display: block;
+                        }
+
+                        &__blocked {
+                            background-color: $gray5;
+                        }
+
+                        &[data-status="holiday"] {
+                            background-color: $statusHoliday;
+                        }
+
+                        &[data-status="scheduled"] {
+                            background-color: $statusScheduled;
+                        }
+
+                        &[data-status="absent"] {
+                            background-color: $statusAbsent;
+                        }
+
+                        &[data-status="in-progress"] {
+                            background-color: $statusInProgress;
+                        }
+
+                        &[data-status="done"] {
+                            background-color: $statusDone;
+                        }
+
+                        &[data-status="canceled"] {
+                            background-color: $statusCanceled;
+                        }
+                    }
+                }
+            }
+
+            &--weekly {
+                min-height: 40px;
+
+                &:nth-child(1) {
+                    width: 70px;
+                }
+
+                &:nth-child(7) {
+                    border-right: 1px solid $gray30;
+                }
+
+                &:nth-child(8) {
+                    border-right: 0;
+                }
+
+                .utc-time {
+                    color: $gray50;
+                }
+            }
+        }
+
+        &--time {
+            position: absolute;
+            width: calc(100% - 10px);
+            left: 0;
+            bottom: -9px;
+            background: white;
+        }
+    }
+
+    &__monthly {
+        &-item {
+            min-height: 156px;
+            flex-direction: column;
+            box-sizing: content-box;
+        }
+    }
+
+    &__weekly {
+        &-day {
+            display: inline-flex;
+            margin-top: 5px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+
+            &.is-current {
+                background-color: rgba($primary10, .08);
+                color: $primary50;
+            }
+
+            &.another-month {
+                color: $gray50
+            }
+        }
+
+        .calendar__row--header {
+            border-top: 0;
+        }
+    }
+
+    &__daily {
+        &-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            box-sizing: border-box;
+            padding-left: 90px;
+
+            &-day {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                font-size: rdm(24);
+                font-weight: 700;
+                margin-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &-week {
+                font-size: rdm(16);
+            }
+        }
+
+        &-row {
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid $gray30;
+
+            &-item {
+                border-left: 1px solid $gray30;
+                min-height: 4.625rem;
+                box-sizing: border-box;
+                position: relative;
+                align-items: center;
+                padding: 10px;
+                justify-content: center;
+                display: flex;
+
+                &:first-child {
+                    border-left: 0;
+                }
+
+                &:last-child {
+                    flex-grow: 1;
+                    flex-direction: column;
+                    row-gap: 10px;
+                }
+
+                .day-item {
+                    &__title {
+                        span {
+                            width: 2rem;
+                            height: 2rem;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0;
+                            border-radius: 50%;
+                        }
+                    }
+    
+                    &__events {
+                        color: $dark;
+                        font-weight: 400;
+                        margin-top: 10px;
+                        margin-bottom: auto;
+                        text-align: left;
+                        width: 100%;
+    
+                        &-item {
+                            cursor: pointer;
+                            min-width: 100%;
+                            padding: 2px 1rem;
+                            border-radius: 5px;
+    
+                            &__patient {
+                                color: $dark;
+                                display: block;
+                            }
+    
+                            &__time {
+                                color: $gray70;
+                                display: block;
+                            }
+    
+                            &[data-status="holiday"] {
+                                background-color: $statusHoliday;
+                            }
+    
+                            &[data-status="scheduled"] {
+                                background-color: $statusScheduled;
+                            }
+    
+                            &[data-status="absent"] {
+                                background-color: $statusAbsent;
+                            }
+    
+                            &[data-status="in-progress"] {
+                                background-color: $statusInProgress;
+                            }
+    
+                            &[data-status="done"] {
+                                background-color: $statusDone;
+                            }
+    
+                            &[data-status="canceled"] {
+                                background-color: $statusCanceled;
+                            }
+                        }
+                    }
+                }
+    
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        &-hour {
+            width: 5.625rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        &-event {
+            flex: 1;
+        }
+    }
+}
+
+.appointment {
+    &--hidden {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    &__see-more {
+        text-decoration: none;
+        font-weight: 700;
+        margin-left: 12px;
+        color: $dark;
+    }
+
+    &-modal {
+        &__dialog {
+            max-width: 341px;
+        }
+
+        &__header-button {
+            font-size: 3rem  !important;
+            position: absolute;
+            right: 0;
+            top: 3px;
+            background-color: transparent;
+            border: 0;
+        }
+
+        &__header {
+            text-align: center;
+            width: 100%;
+            color: $dark;
+
+            h3 {
+                margin-top: 6px;
+                font-weight: 400;
+                font-size: rdm(16);
+            }
+
+            h2 {
+                margin-top: rdm(22);
+                font-size: rdm(40);
+            }
+        }
+
+        .modal-header {
+            border-bottom: 0;
+        }
+
+        .day-item {
+            &__events {
+                color: $dark;
+                font-weight: 400;
+                margin-top: 10px;
+                margin-bottom: auto;
+                text-align: left;
+                width: 100%;
+
+                &-item {
+                    cursor: pointer;
+                    padding: 2px 1rem;
+                    margin-bottom: 5px;
+                    border-radius: 5px;
+
+                    &__patient {
+                        color: $dark;
+                        display: block;
+                    }
+
+                    &__time {
+                        color: $gray70;
+                        display: block;
+                    }
+
+                    &[data-status="holiday"] {
+                        background-color: $statusHoliday;
+                    }
+
+                    &[data-status="scheduled"] {
+                        background-color: $statusScheduled;
+                    }
+
+                    &[data-status="absent"] {
+                        background-color: $statusAbsent;
+                    }
+
+                    &[data-status="in-progress"] {
+                        background-color: $statusInProgress;
+                    }
+
+                    &[data-status="done"] {
+                        background-color: $statusDone;
+                    }
+
+                    &[data-status="canceled"] {
+                        background-color: $statusCanceled;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+}

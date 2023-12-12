@@ -1,0 +1,112 @@
+.patient-modal {
+    &__dialog {
+        max-width: 620px;
+    }
+
+    &__top-detail {
+        display: flex;
+        align-items: center;
+        gap: rdm(20);
+    }
+
+    &__image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    &__name, &__appointment {
+        text-align: left;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__buttons {
+        align-self: flex-start;
+    }
+
+    &__header-button {
+        background: none;
+        border: 0;
+    }
+
+    &__body {
+        display: grid;
+        gap: 20px;
+        padding-top: 15px;
+        padding-bottom: 30px;
+        grid-template-columns: 180px auto;
+        align-items: center;
+    }
+
+    &__value {
+        padding: 0 20px;
+    }
+
+    &__status {
+        padding: 5px 20px;
+        display: inline-flex;
+        border-radius: 50px;
+        align-items: center;
+
+        &.anchor-popover {
+            cursor: pointer;
+        }
+
+        &[data-status="holiday"] {
+            background-color: $statusHoliday;
+        }
+
+        &[data-status="scheduled"] {
+            background-color: $statusScheduled;
+        }
+
+        &[data-status="absent"] {
+            background-color: $statusAbsent;
+        }
+
+        &[data-status="in-progress"] {
+            background-color: $statusInProgress;
+        }
+
+        &[data-status="done"] {
+            background-color: $statusDone;
+        }
+
+        &[data-status="canceled"] {
+            background-color: $statusCanceled;
+        }
+
+        .material-icons {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        column-gap: 20px;
+        justify-content: flex-end;
+
+        .btn:first-child {
+            flex: 1;
+        }
+
+        .appointment-cancel-button {
+            background-color: $error;
+        }
+    }
+}
+
+.content-popover-patient {
+    font-size: 1rem;
+
+    li {
+        margin-bottom: 1rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

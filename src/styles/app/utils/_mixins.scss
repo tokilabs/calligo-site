@@ -1,0 +1,16 @@
+/* mixins */
+@mixin clearfix {
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      clear: both;
+    }  
+}
+
+@mixin basicDisplay {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
