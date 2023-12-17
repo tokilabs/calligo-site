@@ -7,26 +7,25 @@ $desktop-min: 1024px;
 $desktop-mid: 1760px;
 $desktop-large: 1920px;
 
-
-@function rm($number){
-  $val: $number * 100 / 320;
-
-  @return $val + vw;
-}
-
-@function rt($number){
-  $val: $number * 100 / 768;
+@function rm($number) {
+  $val: calc($number * 100 / 320);
 
   @return $val + vw;
 }
 
-@function rd($number){
-  $val: $number * 100 / 1440;
+@function rt($number) {
+  $val: calc($number * 100 / 768);
+
   @return $val + vw;
 }
 
-@function rdm($number){
-  $val: $number * 100 / 1920;
+@function rd($number) {
+  $val: calc($number * 100 / 1440);
+  @return $val + vw;
+}
+
+@function rdm($number) {
+  $val: calc($number * 100 / 1920);
 
   @return $val + vw;
 }
@@ -39,19 +38,27 @@ $desktop-large: 1920px;
 'landscape': To target just the landscape mode of phones.
 'legacy-landscape': Target landscape mode on legacy phones.
 */
-@mixin mobile($media : regular) {
-	@if $media == regular {
-		@media only screen and (max-width: $mobile-max) {@content;}		
-	}
-	@if $media == legacy {
-		@media only screen and (max-width: $mobile-min) {@content;}
-	}
-	@if $media == landscape {
-		@media only screen and (max-width: $mobile-max) and (orientation: landscape) {@content;}
-	}
-	@if $media == legacy-landscape {
-		@media only screen and (min-device-width : $mobile-min) and (max-device-width : 667px) and (orientation : landscape) { @content }
-	}
+@mixin mobile($media: regular) {
+  @if $media == regular {
+    @media only screen and (max-width: $mobile-max) {
+      @content;
+    }
+  }
+  @if $media == legacy {
+    @media only screen and (max-width: $mobile-min) {
+      @content;
+    }
+  }
+  @if $media == landscape {
+    @media only screen and (max-width: $mobile-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+  @if $media == legacy-landscape {
+    @media only screen and (min-device-width: $mobile-min) and (max-device-width: 667px) and (orientation: landscape) {
+      @content;
+    }
+  }
 }
 
 /*
@@ -61,16 +68,22 @@ $desktop-large: 1920px;
 'portrait': To target just the landscape mode of tablets.
 'legacy-landscape': Target landscape mode on legacy phones.
 */
-@mixin tablet($media : regular) {
-	@if $media == regular {
-		@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {@content;}		
-	}
-	@if $media == landscape {
-		@media only screen and (max-width: $tablet-max) and (orientation: landscape) {@content;}		
-	}
-	@if $media == portrait {
-		@media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: portrait) {@content;}
-	}
+@mixin tablet($media: regular) {
+  @if $media == regular {
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+      @content;
+    }
+  }
+  @if $media == landscape {
+    @media only screen and (max-width: $tablet-max) and (orientation: landscape) {
+      @content;
+    }
+  }
+  @if $media == portrait {
+    @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max) and (orientation: portrait) {
+      @content;
+    }
+  }
 }
 
 /*
@@ -80,23 +93,31 @@ $desktop-large: 1920px;
 'large': To target just the landscape mode of tablets.
 'legacy-landscape': Target landscape mode on legacy phones.
 */
-@mixin desktop($media : regular) {
-	@if $media == regular {
-		@media only screen and (min-width: $desktop-min) {@content;}		
-	}
-	@if $media == medium {
-		@media only screen and (min-width: $desktop-mid) {@content;}		
-	}
-	@if $media == large {
-		@media only screen and (min-width: $desktop-large) {@content;}		
-	}
-	@if $media == short {
-		@media only screen and (min-width: $desktop-min) and (max-height: 690px) {@content;}		
-
-	}
+@mixin desktop($media: regular) {
+  @if $media == regular {
+    @media only screen and (min-width: $desktop-min) {
+      @content;
+    }
+  }
+  @if $media == medium {
+    @media only screen and (min-width: $desktop-mid) {
+      @content;
+    }
+  }
+  @if $media == large {
+    @media only screen and (min-width: $desktop-large) {
+      @content;
+    }
+  }
+  @if $media == short {
+    @media only screen and (min-width: $desktop-min) and (max-height: 690px) {
+      @content;
+    }
+  }
 }
 
-
 @mixin portrait() {
-	@media only screen and (min-width: $desktop-min) and (orientation: portrait) {@content;}
+  @media only screen and (min-width: $desktop-min) and (orientation: portrait) {
+    @content;
+  }
 }

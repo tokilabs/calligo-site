@@ -1,8 +1,8 @@
 ---
-import { ImgConfigOptions } from 'astro-imagetools';
+// import { ImgConfigOptions } from 'astro-imagetools';
 import { Image } from 'astro:assets';
 
-interface Props extends Omit<ImgConfigOptions, 'src' | 'alt'> {
+interface Props {
   file: string;
   class?: string | null;
   alt?: string | null;
@@ -16,4 +16,5 @@ const images = import.meta.glob('../assets/img/*.*');
   src={images[`../assets/img/${file}`]() as any}
   alt={alt || ''}
   class={className}
+  height={undefined}
 />

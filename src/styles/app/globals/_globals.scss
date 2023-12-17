@@ -8,13 +8,12 @@ body {
   font-size: 16px;
   min-height: 100vh;
   position: relative;
-  background: #FFF;
+  background: #fff;
   font-family: $sans-fs;
 
-  @include desktop(){
+  @include desktop() {
     font-size: rdm(16);
   }
-
 }
 
 html.apiLoading {
@@ -26,14 +25,14 @@ html.apiLoading {
 }
 
 body {
-  @include desktop(){
+  @include desktop() {
     // padding-top: 80px;
   }
   padding-right: 0 !important;
 
   main.main {
     min-height: 100vh;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 
     @include mobile() {
       background-color: #f6f6f6;
@@ -42,7 +41,7 @@ body {
 }
 
 ul {
- list-style: none; 
+  list-style: none;
 }
 
 img.brandname {
@@ -59,18 +58,21 @@ img.brandname {
 
 /* Bootstrap overrides */
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #f1ebce;
-    border: 1px solid #f1ebce;
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
+  background-color: #f1ebce;
+  border: 1px solid #f1ebce;
 }
 
 .select2-container.select2-container--open {
   text-align: left;
 }
 
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #7b47f9;
-    color: white;
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: #7b47f9;
+  color: white;
 }
 
 .btn {
@@ -86,17 +88,15 @@ img.brandname {
 }
 
 .flex-end {
-
 }
 
 .main {
   min-height: 100vh;
 }
 
-
 .no-gutter > [class*='col'] {
-    padding-right:0;
-    padding-left:0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .section-placeholder {
@@ -113,16 +113,15 @@ img.brandname {
 }
 
 .container {
-
-    &.flex-fullcentered {
-      display: flex;
-      height: 100%;
-      width: 100%;
-      align-content: center;
-      justify-content: center;
-      align-items: center;  
-      min-height: 100vh;
-    }
+  &.flex-fullcentered {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 }
 
 /* slick */
@@ -141,7 +140,7 @@ img.brandname {
     button {
       width: rdm(20);
       height: rdm(20);
-      transition: all .2s linear;
+      transition: all 0.2s linear;
 
       border-radius: 50%;
       background: $white;
@@ -166,19 +165,16 @@ img.brandname {
   }
 }
 
-
 /* SVG Coloring */
 
-svg {
-  &.logo {
-    path {
-      fill: $white;
-    }
+svg.logo {
+  path {
+    fill: $white;
+  }
 
-    &.primary {
-      path {
-        fill: $primary;
-      }
+  &.primary {
+    path {
+      fill: $primary;
     }
   }
 }
@@ -189,12 +185,12 @@ svg {
       padding: 0 !important;
 
       li {
-        margin-bottom: .3em;
+        margin-bottom: 0.3em;
 
         .caption {
           position: relative;
-          left: .8em;
-          top: -.65em;
+          left: 0.8em;
+          top: -0.65em;
         }
       }
     }
@@ -204,9 +200,9 @@ svg {
 .btn-round-icon {
   width: auto !important;
   border-radius: 50%;
-  padding: .4em !important;
+  padding: 0.4em !important;
   line-height: 0;
-  border: 5px solid #FFF !important;
+  border: 5px solid #fff !important;
 }
 
 .material-icons-outlined {
@@ -248,12 +244,12 @@ svg {
 }
 
 .loader {
-  position:  fixed;
-  display:  block;
-  width:  100%;
-  height:  100%;
-  background:  #FFF;
-  transition: all .4s linear;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: all 0.4s linear;
   pointer-events: initial;
   z-index: 9999999;
 
@@ -271,7 +267,7 @@ svg {
       animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
     }
   }
-  
+
   @keyframes lds-heart {
     0% {
       transform: scale(0.95);
@@ -294,15 +290,15 @@ svg {
   }
 
   .center {
-      position:  absolute;
-      display:  block;
-      top:  50%;
-      left:  50%;
-      transform:  translate(-50%, -50%);
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &.loaded {
-      opacity: 0;
-      pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
   }
 }

@@ -23,9 +23,9 @@ var app = (function ($) {
     var errors = 0;
     // var scroll = new SmoothScroll('a[href*="#"]');
 
-    setTimeout(function () {
-      $(window).scroll();
-    }, 100);
+    // setTimeout(function () {
+    //   $(window).scroll();
+    // }, 100);
 
     $('.form-control, .form-select').on('blur', function () {
       if ($(this).val().length > 0) {
@@ -78,3 +78,5 @@ var app = (function ($) {
 jQuery(document).ready(function ($) {
   app.init($);
 });
+
+import './components';

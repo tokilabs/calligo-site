@@ -1,22 +1,21 @@
-var play_video_modal = (function(){
-	var loaded = false;
+import $ from 'jquery';
+function init() {
+  console.log('[play_video_modal] initializing...');
 
-	var init = function init(){
-		cl('[play_video_modal] initializing...');
-		
-		$('.play_video').on('click',function() {
-			var id_modal = $(this).data().bsTarget;
-			$(id_modal + ' video')[0].play();
-		});
+  $('.play_video').on('click', function () {
+    console.log('CLICKED! Playing video');
 
-		$('video').closest('.modal').on('hidden.bs.modal', function () {
-			$(this).find('video')[0].pause();
-		});
+    let id_modal = $(this).data().bsTarget;
+    $(id_modal + ' video')[0].play();
+  });
 
-		cl('[play_video_modal] initiated.');
-	};
+  $('video')
+    .closest('.modal')
+    .on('hidden.bs.modal', function () {
+      $(this).find('video')[0].pause();
+    });
 
-	return {
-		init: init
-	}
-})();
+  console.log('[play_video_modal] initiated.');
+}
+
+export default { init };

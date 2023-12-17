@@ -1,9 +1,15 @@
 ---
 import Defaultlayout from '../layouts/DefaultLayout.astro';
+
 import ImgAsset from '../components/ImgAsset.astro';
+import '../styles/pages/index.scss';
 ---
 
 <Defaultlayout id="therapist" title="Therapist">
+  <script>
+    import sliders from '../app/components/slider/slider';
+    sliders.init();
+  </script>
   <main class="main">
     <div
       id="intro-calligo"

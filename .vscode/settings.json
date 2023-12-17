@@ -26,19 +26,15 @@
     "astro",
     "marko"
   ],
-  "prettier.documentSelectors": [
-    "**/*.astro"
-  ],
+  "prettier.documentSelectors": ["**/*.astro"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.bracketSameLine": true,
   "explorer.fileNesting.patterns": {
     ".config*": ".git*, *config, *config.json, *config.js, *config.mjs, *config.cjs, *config.d.ts, *config.ts, *config.mts, *config.cts, *config.toml, *config.yaml, *config.yml, *rc, *rc.json, *rc.js, *rc.mjs, *rc.cjs, *rc.ts, *rc.toml, *rc.yaml, *rc.yml"
   },
-  "cSpell.words": [
-    "astrojs",
-    "cssnano",
-    "imagetools",
-    "spotlightjs"
-  ]
+  "cSpell.words": ["astrojs", "cssnano", "imagetools", "spotlightjs"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

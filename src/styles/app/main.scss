@@ -1,19 +1,23 @@
-//utilities
+// utilities
 @import 'utils/reset.scss';
 @import 'utils/colors.scss';
 @import 'utils/mixins.scss';
 @import 'utils/fonts.scss';
 @import 'utils/breakpoints.scss';
 
+// configure bootstrap variables
 @import 'utils/bs-overrides.scss';
 
+// load bootstrap
 @import 'utils/bootstrap/bootstrap.scss';
 
-//global styles
+// load css for 3rd-party components
+@import '../vendors';
+
+// app global styles
 @import 'globals/globals.scss';
 @import 'globals/typography.scss';
-
 @import 'components/__all.scss';
-@import 'pages/__all.scss';
 
-@import '../vendors';
+// page specific overrides
+@import 'pages/__all.scss';

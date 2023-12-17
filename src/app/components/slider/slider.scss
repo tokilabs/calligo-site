@@ -1,0 +1,22 @@
+@use '/src/styles/app/utils/breakpoints' as *;
+
+.slider-image {
+  width: 100%;
+}
+
+.slick-dots {
+  bottom: rdm(190);
+  z-index: 600;
+  width: 55%;
+
+  @include mobile() {
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    padding-top: rdm(20);
+  }
+}
+
+.intro-slider {
+  width: 100%;
+}

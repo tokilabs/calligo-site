@@ -6,6 +6,13 @@ import '../styles/pages/index.scss';
 ---
 
 <DefaultLayout id="home" title="Home">
+  <script>
+    import sliders from '../app/components/slider/slider';
+    sliders.init();
+
+    import videoModal from '../app/components/play_video_modal';
+    videoModal.init();
+  </script>
   <main class="main">
     <div id="intro-calligo" class="container-fluid component" cp-name="sliders">
       <div class="intro-slider">
@@ -46,9 +53,10 @@ import '../styles/pages/index.scss';
           </div>
 
           <ImgAsset
-            file="home-banner-1.png"
             class="slider-image desktop"
+            file="home-banner-1.png"
             alt="Home banner"
+            height={undefined}
           />
         </div>
 
@@ -61,11 +69,13 @@ import '../styles/pages/index.scss';
                   class="brandname desktop"
                   file="brandname.png"
                   alt="Calligo."
+                  height={undefined}
                 />
                 <ImgAsset
                   class="brandname mobile"
                   file="brandname-mobile.png"
                   alt="Calligo."
+                  height={undefined}
                 />
                 <h1 class="text-start mobile-centered">Evolua</h1>
                 <p class="subtitle1 mobile-centered">
@@ -93,11 +103,13 @@ import '../styles/pages/index.scss';
                   class="brandname desktop"
                   file="brandname.png"
                   alt="Calligo."
+                  height={undefined}
                 />
                 <ImgAsset
                   class="brandname mobile"
                   file="brandname-mobile.png"
                   alt="Calligo."
+                  height={undefined}
                 />
                 <br /><br />
                 <p class="subtitle1 mobile-centered">
@@ -111,13 +123,18 @@ import '../styles/pages/index.scss';
                   data-bs-target="#videomodal"
                   class="play_video component"
                   cp-name="play_video_modal">
-                  <ImgAsset file="play.png" /> Assista o vídeo
+                  <ImgAsset file="play.png" height={undefined} /> Assista o
+                  vídeo
                 </button>
               </div>
             </div>
           </div>
 
-          <ImgAsset file="home-banner-2.png" class="slider-image desktop" />
+          <ImgAsset
+            file="home-banner-2.png"
+            class="slider-image desktop"
+            height={undefined}
+          />
         </div>
       </div>
 
@@ -370,12 +387,10 @@ import '../styles/pages/index.scss';
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <video controls>
-          <source file="calligo_final_posterize.mp4" type="video/mp4" />
+          <source file="/videos/calligo_final_posterize.mp4" type="video/mp4" />
            Seu navegador não suporta vídeos HTML5.
         </video>
       </div>
     </div>
   </div>
-  <!-- <script is:inline src="/js/Vendors.js"></script> -->
-  <script is:inline src="/src/app/main.js"></script>
 </DefaultLayout>
