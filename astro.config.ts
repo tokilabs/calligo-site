@@ -10,7 +10,7 @@ import { astroImageTools } from 'astro-imagetools';
 export default defineConfig({
   site: 'http://preview.calligo.com.br',
   srcDir: './src',
-  publicDir: './public',
+  publicDir: './pubic',
   // base: '',
   integrations: [sentry(), spotlightjs(), sitemap(), astroImageTools],
 });
