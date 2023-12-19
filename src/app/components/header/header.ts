@@ -58,9 +58,10 @@ const headerModule = ((): { init: InitFunction } => {
     };
 
     if (home.length) {
+      toggleNavbarStyle();
       windowElement.on('scroll', toggleNavbarStyle);
     } else {
-      toggleNavbarStyle();
+      // toggleNavbarStyle();
     }
 
     flyoutMenu.on('click', (e: JQuery.Event) => {

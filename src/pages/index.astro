@@ -3,8 +3,6 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import ImgAsset from '../components/ImgAsset.astro';
 import '../styles/pages/index.scss';
-import '../app/components/slider/slider.scss';
-import '../app/components/header/header.scss';
 ---
 
 <DefaultLayout id="home" title="Home">
@@ -45,9 +43,7 @@ import '../app/components/header/header.scss';
                   profissional através dos serviços customizados da Calligo.
                 </p>
                 <br />
-                <a
-                  href="/users/add-select-type"
-                  class="btn btn-bold btn-primary">
+                <a href="/" class="btn btn-bold btn-primary">
                   Quero transformar!
                 </a>
               </div>
@@ -58,7 +54,6 @@ import '../app/components/header/header.scss';
             class="slider-image desktop"
             file="home-banner-1.png"
             alt="Home banner"
-            height={undefined}
           />
         </div>
 
@@ -71,13 +66,11 @@ import '../app/components/header/header.scss';
                   class="brandname desktop"
                   file="brandname.png"
                   alt="Calligo."
-                  height={undefined}
                 />
                 <ImgAsset
                   class="brandname mobile"
                   file="brandname-mobile.png"
                   alt="Calligo."
-                  height={undefined}
                 />
                 <h1 class="text-start mobile-centered">Evolua</h1>
                 <p class="subtitle1 mobile-centered">
@@ -86,9 +79,7 @@ import '../app/components/header/header.scss';
                   profissional independente e ideal para te ouvir.
                 </p>
                 <br />
-                <a href="/search" class="btn btn-bold btn-primary">
-                  Quero evoluir!
-                </a>
+                <a href="/" class="btn btn-bold btn-primary">Quero evoluir!</a>
               </div>
             </div>
           </div>
@@ -105,13 +96,11 @@ import '../app/components/header/header.scss';
                   class="brandname desktop"
                   file="brandname.png"
                   alt="Calligo."
-                  height={undefined}
                 />
                 <ImgAsset
                   class="brandname mobile"
                   file="brandname-mobile.png"
                   alt="Calligo."
-                  height={undefined}
                 />
                 <br /><br />
                 <p class="subtitle1 mobile-centered">
@@ -125,18 +114,13 @@ import '../app/components/header/header.scss';
                   data-bs-target="#videomodal"
                   class="play_video component"
                   cp-name="play_video_modal">
-                  <ImgAsset file="play.png" height={undefined} /> Assista o
-                  vídeo
+                  <ImgAsset file="play.png" /> Assista o vídeo
                 </button>
               </div>
             </div>
           </div>
 
-          <ImgAsset
-            file="home-banner-2.png"
-            class="slider-image desktop"
-            height={undefined}
-          />
+          <ImgAsset file="home-banner-2.png" class="slider-image desktop" />
         </div>
       </div>
 
@@ -389,10 +373,12 @@ import '../app/components/header/header.scss';
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <video controls>
-          <source file="/videos/calligo_final_posterize.mp4" type="video/mp4" />
+          <source src="/videos/calligo_final_posterize.mp4" type="video/mp4" />
            Seu navegador não suporta vídeos HTML5.
         </video>
       </div>
     </div>
   </div>
+  <script is:inline src="js/vendors.js"></script>
+  <script is:inline src="js/main.js"></script>
 </DefaultLayout>

@@ -4,7 +4,7 @@ import ImgAsset from '../components/ImgAsset.astro';
 
 <header
   id="navbar"
-  class="navbar component d-flex flex-wrap justify-content-center py-3 mb-4"
+  class="navbar component d-flex flex-wrap justify-content-center py-3 mb-4 bg-primary"
   cp-name="header">
   <script>
     import headerModule from '../app/components/header/header';
@@ -12,10 +12,10 @@ import ImgAsset from '../components/ImgAsset.astro';
   </script>
   <a
     href="/"
-    class="desktop desktopFlex d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+    class="desktop desktopFlex d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
     cp-name="header">
     <svg
-      class="logo primary"
+      class="logo"
       width="148"
       height="48"
       viewBox="0 0 148 48"
@@ -69,7 +69,7 @@ import ImgAsset from '../components/ImgAsset.astro';
   </a>
   <a
     href="/"
-    class="d-flex mobile mobileFlex text-dark text-decoration-none"
+    class="d-flex mobile mobileFlex text-white text-decoration-none"
     cp-name="header">
     <ImgAsset class="logo_default" file="logo-mobile.png" />
     <ImgAsset class="logo_white" file="logo-mobile-white.png" />
@@ -77,21 +77,21 @@ import ImgAsset from '../components/ImgAsset.astro';
 
   <ul class="desktop desktopFlex valign-center nav">
     <li class="nav-item">
-      <a href="/" class="nav-link text-dark">Quero Terapia</a>
+      <a href="/" class="nav-link text-white">Quero Terapia</a>
     </li>
     <li class="nav-item">
-      <a href="/therapist" class="nav-link text-dark">Sou Terapeuta</a>
+      <a href="/therapist" class="nav-link text-white">Sou Terapeuta</a>
     </li>
     <li class="nav-item">
-      <a href="/manifest" class="nav-link text-dark">Nosso Propósito</a>
+      <a href="/manifest" class="nav-link text-white">Nosso Propósito</a>
     </li>
   </ul>
 
   <div
     class="desktop desktopFlex d-flex valign-center justify-content-end col-md-2 text-end">
-    <a href="/users/login" class="btn btn-bold me-2 btn-outline-primary">
+    <a href="/users/login" class="btn btn-bold me-2 btn-outline-light">
       Login
-    </a><a href="/users/add-select-type" class="btn btn-bold btn-primary">
+    </a><a href="/users/add-select-type" class="btn btn-bold btn-light">
       Cadastre-se
     </a>
   </div>
@@ -117,22 +117,22 @@ import ImgAsset from '../components/ImgAsset.astro';
     <div class="menu-container-top">
       <ul class="p-0">
         <li class="text-start">
-          <a href="/therapist" class="nav-link text-dark">Sou Terapeuta</a>
+          <a href="/therapist" class="nav-link text-white">Sou Terapeuta</a>
         </li>
         <li class="text-start">
-          <a href="/manifest" class="nav-link text-dark">Sobre Nós</a>
+          <a href="/manifest" class="nav-link text-white">Sobre Nós</a>
         </li>
       </ul>
     </div>
     <div class="menu-container-bottom">
       <ul class="p-0">
         <li>
-          <a href="/users/add-select-type" class="btn btn-bold btn-primary">
+          <a href="/users/add-select-type" class="btn btn-bold btn-light">
             Cadastre-se
           </a>
         </li>
         <li>
-          <a href="/users/login" class="btn btn-bold btn-outline-primary">
+          <a href="/users/login" class="btn btn-bold btn-outline-light">
             Login
           </a>
         </li>

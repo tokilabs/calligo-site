@@ -2,6 +2,8 @@
 import Head from '../components/Head.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../app/components/slider/slider.scss';
+import '../app/components/header/header.scss';
 import type { CamelCase } from 'type-fest';
 
 interface Props {
@@ -20,7 +22,5 @@ const { title, description, id } = Astro.props;
     <Header />
     <slot />
     <Footer />
-    <!-- <script is:inline src="/js/Vendors.js"></script>
-    <script src="/src/app/main.js"></script> -->
   </body>
 </html>
