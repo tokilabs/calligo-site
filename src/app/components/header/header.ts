@@ -1,7 +1,5 @@
 import jQuery from 'jquery';
 
-import './header.scss';
-
 type InitFunction = () => void;
 
 const headerModule = ((): { init: InitFunction } => {

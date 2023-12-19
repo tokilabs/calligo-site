@@ -2,8 +2,6 @@ import jQuery from 'jquery';
 
 import 'slick-carousel';
 
-import './slider.scss';
-
 type SliderOptions = {
   dots: boolean;
   arrows: boolean;

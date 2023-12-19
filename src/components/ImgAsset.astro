@@ -16,5 +16,5 @@ const images = import.meta.glob('../assets/img/*.*');
   src={images[`../assets/img/${file}`]() as any}
   alt={alt || ''}
   class={className}
-  height={undefined}
+  style={{ height: 'auto' }}
 />
