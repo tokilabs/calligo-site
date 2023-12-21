@@ -1,0 +1,15 @@
+---
+interface Props {
+  target: string;
+}
+
+const { target } = Astro.props;
+---
+
+<button
+  data-bs-toggle="modal"
+  data-bs-target={`#${target}`}
+  type="button"
+  class="play_video btn btn-primary">
+  <slot />
+</button>

@@ -33,6 +33,10 @@ const { title, description } = Astro.props;
   </scrip>
   <script>
     import jQuery from 'jquery';
+    // Needed for Bootstrap 5 events to work
+    window['jQuery'] = jQuery;
+    // shortcut for devs :)
+    window['jq'] = jQuery;
   </script>
 
   <!-- 

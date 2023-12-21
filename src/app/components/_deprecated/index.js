@@ -16,7 +16,7 @@ export * from './help-search';
 export * from './input_date';
 export * from './patient_modal';
 export * from './payment';
-export * from './play_video_modal';
+export * from '../video-modal/video-modal';
 export * from './pwd-view';
 export * from './search_page';
 export * from './select_share';

@@ -2,9 +2,12 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import ImgAsset from '../components/ImgAsset.astro';
+import VideoModal from '../components/VideoModal.astro';
+import ModalOpener from '../components/ModalOpener.astro';
+
 import '../styles/pages/index.scss';
 
-// import video from '/public/videos/calligo_final_posterize.mp4';
+const videoModalId = 'videomodal';
 ---
 
 <DefaultLayout id="home" title="Home">
@@ -12,8 +15,7 @@ import '../styles/pages/index.scss';
     import sliders from '../app/components/slider/slider';
     sliders.init();
 
-    import videoModal from '../app/components/video-modal/video-modal';
-    videoModal.init();
+    // import videoModal from '../app/components/video-modal/video-modal';
   </script>
   <main class="main">
     <div id="intro-calligo" class="container-fluid component" cp-name="sliders">
@@ -111,13 +113,10 @@ import '../styles/pages/index.scss';
                   tornar o acesso à saúde mental uma realidade de todos.
                 </p>
                 <br />
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#videomodal"
-                  class="play_video component"
-                  cp-name="play_video_modal">
+
+                <ModalOpener target={videoModalId}>
                   <ImgAsset file="play.png" /> Assista o vídeo
-                </button>
+                </ModalOpener>
               </div>
             </div>
           </div>
@@ -371,17 +370,8 @@ import '../styles/pages/index.scss';
     </div>
   </main>
 
-  <div class="modal fade" id="videomodal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <video controls>
-          <source
-            src="/public/videos/calligo_final_posterize.mp4"
-            type="video/mp4"
-          />
-           Seu navegador não suporta vídeos HTML5.
-        </video>
-      </div>
-    </div>
-  </div>
+  <VideoModal
+    id={videoModalId}
+    url="/public/videos/calligo_final_posterize.mp4"
+  />
 </DefaultLayout>

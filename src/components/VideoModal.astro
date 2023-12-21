@@ -1,10 +1,53 @@
 ---
+import { nextId } from '../app/utils/nextId';
+
 import Modal from './Modal.astro';
+
+interface Props {
+  id?: string;
+
+  url: string;
+  /**
+   * defaults to "video/mp4"
+   */
+  type?: string;
+}
+
+const { url, type } = Astro.props;
+
+const id = Astro.props.id ?? nextId('modals');
 ---
 
-<Modal>
+<script>
+  console.log('--- modal script ----');
+  import $ from 'jquery';
+  window.jq = $;
+  import 'bootstrap/js/dist/modal';
+
+  console.log('[VideoModal] init() called');
+
+  $(() => {
+    console.log('[VideoModal] initializing...');
+
+    $('.modal')
+      .on('shown.bs.modal', function () {
+        console.log('[[[ EVENT ]]]', 'show.bs.modal', arguments);
+        const video = $(this).find('video')[0];
+        video.play();
+      })
+      .on('hide.bs.modal', function () {
+        console.log('[[[ EVENT ]]]', 'hide.bs.modal', arguments);
+        const video = $(this).find('video')[0];
+        video.pause();
+      });
+
+    console.log('[VideoModal] initiated.');
+  });
+</script>
+
+<Modal {id}>
   <video controls>
-    <source src="/public/videos/calligo_final_posterize.mp4" type="video/mp4" />
+    <source src={url} type={type || 'video/mp4'} />
      Seu navegador não suporta vídeos HTML5.
   </video>
 </Modal>

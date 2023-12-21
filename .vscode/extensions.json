@@ -2,7 +2,8 @@
   "recommendations": [
     "astro-build.astro-vscode",
     "pranaygp.vscode-css-peek",
-    "csstools.postcss"
+    "csstools.postcss",
+    "zixuanchen.vitest-explorer"
   ],
   "unwantedRecommendations": []
 }

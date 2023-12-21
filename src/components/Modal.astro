@@ -1,0 +1,17 @@
+---
+import { nextId } from '../app/utils/nextId';
+
+interface Props {
+  id?: string;
+}
+
+const id = Astro.props.id ?? nextId('modals');
+---
+
+<div {id} class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <slot />
+    </div>
+  </div>
+</div>
