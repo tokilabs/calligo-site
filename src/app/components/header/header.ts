@@ -18,7 +18,6 @@ const headerModule = ((): { init: InitFunction } => {
     const flyoutMenu = jQuery('.flyoutMenu');
     const hasFlyoutMenu = jQuery('.hasFlyoutMenu');
     const markAllAsRead = jQuery('#markAllAsRead');
-    const btnResendEmail = jQuery('#btnResendEmail');
     const menuMobile = jQuery('#menu_mobile');
     const menuMobileContainer = jQuery('#menu_mobile_container');
     const closeMenuButton = jQuery('.close-menu-button');
@@ -64,11 +63,11 @@ const headerModule = ((): { init: InitFunction } => {
       // toggleNavbarStyle();
     }
 
-    flyoutMenu.on('click', (e: JQuery.Event) => {
+    flyoutMenu.on('click', (e) => {
       e.stopPropagation();
     });
 
-    hasFlyoutMenu.on('click', (e: JQuery.Event) => {
+    hasFlyoutMenu.on('click', (e) => {
       e.stopPropagation();
       jQuery(e.currentTarget).toggleClass('open');
     });
@@ -81,14 +80,6 @@ const headerModule = ((): { init: InitFunction } => {
 
     jQuery('body').on('click', () => {
       hasFlyoutMenu.removeClass('open');
-    });
-
-    btnResendEmail.on('click', () => {
-      const mail: string = btnResendEmail.attr('data-email') as string;
-      const baseUrl: string = _BASE_URL_; // Assume _BASE_URL_ is defined elsewhere in your codebase
-      $.getJSON(`${baseUrl}users/resendmail?email=${mail}`, (response: any) => {
-        cl(response);
-      });
     });
 
     menuMobile.on('click', () => {

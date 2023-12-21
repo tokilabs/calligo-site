@@ -3,6 +3,8 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import ImgAsset from '../components/ImgAsset.astro';
 import '../styles/pages/index.scss';
+
+// import video from '/public/videos/calligo_final_posterize.mp4';
 ---
 
 <DefaultLayout id="home" title="Home">
@@ -10,7 +12,7 @@ import '../styles/pages/index.scss';
     import sliders from '../app/components/slider/slider';
     sliders.init();
 
-    import videoModal from '../app/components/play_video_modal';
+    import videoModal from '../app/components/video-modal/video-modal';
     videoModal.init();
   </script>
   <main class="main">
@@ -373,12 +375,13 @@ import '../styles/pages/index.scss';
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <video controls>
-          <source src="/videos/calligo_final_posterize.mp4" type="video/mp4" />
+          <source
+            src="/public/videos/calligo_final_posterize.mp4"
+            type="video/mp4"
+          />
            Seu navegador não suporta vídeos HTML5.
         </video>
       </div>
     </div>
   </div>
-  <script is:inline src="js/vendors.js"></script>
-  <script is:inline src="js/main.js"></script>
 </DefaultLayout>
