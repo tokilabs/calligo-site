@@ -8,6 +8,9 @@ import ModalOpener from '../components/ModalOpener.astro';
 import '../styles/pages/index.scss';
 
 const videoModalId = 'videomodal';
+const searchUrl = import.meta.env.SEARCH_URL;
+const loginUrl = import.meta.env.LOGIN_URL;
+const signupUrl = import.meta.env.SIGNUP_URL;
 ---
 
 <DefaultLayout id="home" title="Home">
@@ -47,7 +50,7 @@ const videoModalId = 'videomodal';
                   profissional através dos serviços customizados da Calligo.
                 </p>
                 <br />
-                <a href="/" class="btn btn-bold btn-primary">
+                <a href={signupUrl} class="btn btn-bold btn-primary">
                   Quero transformar!
                 </a>
               </div>

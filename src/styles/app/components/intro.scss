@@ -67,6 +67,7 @@
       border: 0;
       margin-left: rdm(15);
       text-transform: uppercase;
+      color: black;
 
       @include mobile() {
         margin: rm(35) 0;

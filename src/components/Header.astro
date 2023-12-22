@@ -1,5 +1,8 @@
 ---
 import ImgAsset from '../components/ImgAsset.astro';
+const searchUrl = import.meta.env.SEARCH_URL;
+const loginUrl = import.meta.env.LOGIN_URL;
+const signupUrl = import.meta.env.SIGNUP_URL;
 ---
 
 <header
@@ -77,7 +80,7 @@ import ImgAsset from '../components/ImgAsset.astro';
 
   <ul class="desktop desktopFlex valign-center nav">
     <li class="nav-item">
-      <a href="/" class="nav-link text-white">Quero Terapia</a>
+      <a href={searchUrl} class="nav-link text-white">Quero Terapia</a>
     </li>
     <li class="nav-item">
       <a href="/therapist" class="nav-link text-white">Sou Terapeuta</a>
@@ -89,9 +92,9 @@ import ImgAsset from '../components/ImgAsset.astro';
 
   <div
     class="desktop desktopFlex d-flex valign-center justify-content-end col-md-2 text-end">
-    <a href="/users/login" class="btn btn-bold me-2 btn-outline-light">
-      Login
-    </a><a href="/users/add-select-type" class="btn btn-bold btn-light">
+    <a href={loginUrl} class="btn btn-bold me-2 btn-outline-light">Login</a><a
+      href={signupUrl}
+      class="btn btn-bold btn-light">
       Cadastre-se
     </a>
   </div>
