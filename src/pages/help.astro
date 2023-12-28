@@ -1,11 +1,15 @@
 ---
-import Defaultlayout from '../layouts/DefaultLayout.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import ImgAsset from '../components/ImgAsset.astro';
-import '../app/components/_deprecated/sidebar.js';
+
+import '../styles/pages/index.scss';
+
+const videoModalId = 'videomodal';
+const signupUrl = import.meta.env.SIGNUP_URL;
 ---
 
-<Defaultlayout id="help" title="Help">
+<DefaultLayout id="help" title="Help">
   <div id="help-search" class="component offset-header" cp-name="helpSearch">
     <section class="searchForm container-fluid bg-primary">
       <div class="container">
@@ -14,13 +18,13 @@ import '../app/components/_deprecated/sidebar.js';
             <div class="row">
               <div class="col">
                 <h1>Central de Ajuda</h1>
-                <p style="display: none" class="subtitle1">
+                <!-- <p style="display: none" class="subtitle1">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   vel nibh pulvinar, fermentum ligula eget, lobortis metus.
-                </p>
+                </p> -->
               </div>
             </div>
-            <div class="row form">
+            <!-- <div class="row form"> 
               <div class="col-12 col-sm-10">
                 <div class="form-outline">
                   <input
@@ -40,7 +44,7 @@ import '../app/components/_deprecated/sidebar.js';
                   Procurar
                 </a>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
@@ -49,21 +53,19 @@ import '../app/components/_deprecated/sidebar.js';
     <div class="accordion">
       <div class="container-categories">
         <div style="display: none" class="row row_mobile-width">
-          <div class="accordion_categories col m-2 m-sm-3" data-category="1">
+          <div
+            class="accordion_categories col m-2 m-sm-3 active"
+            data-category="1">
             <div class="accordion_categories-content">
               <span>
+                <ImgAsset class="icon-inactive" file="help-1.png" alt="Help" />
                 <ImgAsset
-                  class="icon-inactive"
-                  file="help-1.png"
-                  alt="ajuda contato."
-                />
-                <ImgAsset
-                  class="icon-inactive"
+                  class="icon-active"
                   file="help-1-active.png"
-                  alt="ajuda ativa contato."
+                  alt="Help Active"
                 />
               </span>
-              <p class="h5">O que é a CALLIGO?</p>
+              <p class="h5">FAQ</p>
             </div>
           </div>
         </div>
@@ -71,10 +73,10 @@ import '../app/components/_deprecated/sidebar.js';
       <br class="mobile" />
       <div class="container help_list">
         <ul class="help_accordion_category active" data-category="1">
-          <!-- <p class="h3">O que é a CALLIGO?</p> -->
+          <p class="h3">FAQ</p>
           <li class="accordion_list" id="accordion-1-1">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="heading-1-1">
+              <h5 class="accordion-header" id="heading-1-1">
                 <button
                   class="accordion-button collapsed"
                   type="button"
@@ -83,7 +85,7 @@ import '../app/components/_deprecated/sidebar.js';
                   aria-expanded="false">
                   O que é a CALLIGO?
                 </button>
-              </h2>
+              </h5>
               <div
                 id="collapse-1-1"
                 class="accordion-collapse collapse"
@@ -103,64 +105,250 @@ import '../app/components/_deprecated/sidebar.js';
               </div>
             </div>
           </li>
-          <li class="accordion_list" id="accordion-1-1">
+          <li class="accordion_list" id="accordion-1-2">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="heading-1-1">
+              <h5 class="accordion-header" id="heading-1-2">
                 <button
                   class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapse-1-1"
+                  data-bs-target="#collapse-1-2"
                   aria-expanded="false">
-                  O que é a CALLIGO?
+                  Como funciona a CALLIGO?
                 </button>
-              </h2>
+              </h5>
               <div
-                id="collapse-1-1"
+                id="collapse-1-2"
                 class="accordion-collapse collapse"
-                aria-labelledby="heading-1-1"
-                data-bs-parent="#accordion-1-1">
+                aria-labelledby="heading-1-2"
+                data-bs-parent="#accordion-1-2">
                 <div class="accordion-body">
-                  A CALLIGO é uma plataforma em prol da Saúde Mental. Um
-                  ecossistema que conecta psicólogos com outros psicólogos, com
-                  pacientes, e além disso, conta com uma variedade de
-                  serviços/ferramentas pensados exclusivamente na saúde e
-                  bem-estar de todos, no cuidado com a saúde mental, e no
-                  crescimento mútuo. Tudo isso de forma gratuita, realizado
-                  através do cadastro na plataforma, ambiente tanto do
-                  profissional que cuida e recebe cuidados, e ainda do paciente
-                  em busca de um tratamento de qualidade.
+                  A CALLIGO é uma plataforma online, disponível através do
+                  Mobile ou Computador, que atua na intermediação do cuidado com
+                  a saúde mental. Através de sua plataforma, os psicólogos e
+                  pacientes realizam seu cadastro de forma bastante rápida, sem
+                  custo, passando a ter acesso as essas ferramentas que vão além
+                  da Terapia convencional, até ao seu próprio
+                  crescimento/desenvolvimento. As sessões online são realizadas
+                  de acordo com suas preferências de valor, e agenda.
                 </div>
               </div>
             </div>
           </li>
-          <li class="accordion_list" id="accordion-1-1">
+          <li class="accordion_list" id="accordion-1-3">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="heading-1-1">
+              <h5 class="accordion-header" id="heading-1-3">
                 <button
                   class="accordion-button collapsed"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapse-1-1"
+                  data-bs-target="#collapse-1-3"
                   aria-expanded="false">
-                  O que é a CALLIGO?
+                  Quem faz parte da equipe da CALLIGO?
                 </button>
-              </h2>
+              </h5>
               <div
-                id="collapse-1-1"
+                id="collapse-1-3"
                 class="accordion-collapse collapse"
-                aria-labelledby="heading-1-1"
-                data-bs-parent="#accordion-1-1">
+                aria-labelledby="heading-1-3"
+                data-bs-parent="#accordion-1-3">
                 <div class="accordion-body">
-                  A CALLIGO é uma plataforma em prol da Saúde Mental. Um
-                  ecossistema que conecta psicólogos com outros psicólogos, com
-                  pacientes, e além disso, conta com uma variedade de
-                  serviços/ferramentas pensados exclusivamente na saúde e
-                  bem-estar de todos, no cuidado com a saúde mental, e no
-                  crescimento mútuo. Tudo isso de forma gratuita, realizado
-                  através do cadastro na plataforma, ambiente tanto do
-                  profissional que cuida e recebe cuidados, e ainda do paciente
-                  em busca de um tratamento de qualidade.
+                  A CALLIGO conta com um time multidisciplinar composto por
+                  profissionais de diversos segmentos de atuação. Nosso time é
+                  composto por profissionais técnicos em psicologia (no Brasil,
+                  e no Exterior), financeiro, advogados, tecnologia, comunicação
+                  e marketing.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-4">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-4">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-4"
+                  aria-expanded="false">
+                  A Plataforma da Calligo é segura?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-4"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-4"
+                data-bs-parent="#accordion-1-4">
+                <div class="accordion-body">
+                  Sim! Segurança é um princípio básico e extremamente relevante
+                  para a CALLIGO. Seus dados sempre serão tratados de maneira
+                  confidencial, e em conformidade com a nova LEI GERAL DE
+                  PROTEÇÃO DE DADOS - LGPD. Os psicólogos são capacitados para
+                  garantir a segurança da informação, e uso dos dados em toda
+                  estrutura. Tudo isso, proporcionando um ambiente de conforto e
+                  de muita confiança, além de devidamente aprovados e
+                  regularizados junto ao CFP. Você poderá encontrar o selo no
+                  rodapé da página.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-5">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-5">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-5"
+                  aria-expanded="false">
+                  Vou receber lembretes dos meus agendamentos?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-5"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-5"
+                data-bs-parent="#accordion-1-5">
+                <div class="accordion-body">
+                  Sim! O paciente e seu respectivo psicólogo receberão um aviso
+                  de confirmação por e-mail, constando os detalhes do
+                  agendamento assim que a sessão for confirmada.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-6">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-6">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-6"
+                  aria-expanded="false">
+                  Qual o valor das consultas?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-6"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-6"
+                data-bs-parent="#accordion-1-6">
+                <div class="accordion-body">
+                  Os valores das consultas são definidos por você psicólogo, e
+                  variam de acordo seus critérios de qualificação. Importante
+                  lembrar que pode haver um espaço em sua agenda para realizar o
+                  alcance social, ou ainda negociar este atendimento com valores
+                  simbólicos, capazes de alcançar a saúde de alguém. Pense
+                  nisso!
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-7">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-7">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-7"
+                  aria-expanded="false">
+                  Como recebo o pagamento da consulta que realizei?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-7"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-7"
+                data-bs-parent="#accordion-1-7">
+                <div class="accordion-body">
+                  A CALLIGO conta com um parceiro financeiro que fará o split da
+                  transação dividindo imediatamente a transação entre os
+                  psicólogos e a Calligo. O tempo de espera para recebimento do
+                  seu devido irá variar de acordo com a forma de pagamento, seja
+                  PIX ou Cartão de Crédito, e através do seu painel financeiro
+                  você irá controlar os seus recebimentos.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-8">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-8">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-8"
+                  aria-expanded="false">
+                  Os meus dados bancários estão seguros na Plataforma?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-8"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-8"
+                data-bs-parent="#accordion-1-8">
+                <div class="accordion-body">
+                  Sim! Utilizamos a criptografia para proteger os dados do seu
+                  cartão de crédito. O sistema de pagamento escolhido pela
+                  CALLIGO é o mesmo utilizado por grandes corporações e garante
+                  segurança em todas as transações financeiras.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-9">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-9">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-9"
+                  aria-expanded="false">
+                  Como funcionam as sessões online?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-9"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-9"
+                data-bs-parent="#accordion-1-9">
+                <div class="accordion-body">
+                  As sessões são realizadas no consultório virtual da CALLIGO,
+                  que atende os requisitos HIPAA Compliance e da LGPD, que
+                  possuem proteção de dados e sigilo de pacientes. Para
+                  acessá-lo não é necessário instalar nenhum aplicativo, você
+                  consegue entrar diretamente por um link enviado no seu e-mail
+                  15 minutos antes da sessão, ou também diretamente pela
+                  plataforma.
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="accordion_list" id="accordion-1-10">
+            <div class="accordion-item">
+              <h5 class="accordion-header" id="heading-1-10">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse-1-10"
+                  aria-expanded="false">
+                  Posso realizar a sessão através de um celular?
+                </button>
+              </h5>
+              <div
+                id="collapse-1-10"
+                class="accordion-collapse collapse"
+                aria-labelledby="heading-1-10"
+                data-bs-parent="#accordion-1-10">
+                <div class="accordion-body">
+                  Sim!! Acesse o seu consultório virtual de um computador,
+                  tablet ou ainda do celular.
                 </div>
               </div>
             </div>
@@ -175,9 +363,8 @@ import '../app/components/_deprecated/sidebar.js';
           <ImgAsset
             class="ajuda-contato-bg desktop"
             file="ajuda-contato-bg.png"
-            alt="ajuda contato."
+            alt="Ajuda"
           />
-
           <div class="ajc-content">
             <p class="h1">Como podemos <br class="mobile" />te ajudar?</p>
             <p class="subtitle1">
@@ -189,13 +376,13 @@ import '../app/components/_deprecated/sidebar.js';
           <div class="ajc-info">
             <ul>
               <li>
-                <ImgAsset file="email-icon.png" alt="email icon." />
-                <span class="body1">contato@calligo.com</span>
+                <ImgAsset class="img-no-mb" file="email-icon.png" alt="email" />
+                <span class="body1" id="email-placeholder"></span>
               </li>
-              <!--<li>
-                            <img src="/img/phone-icon.png">
-                            <span class="body1">(00) 00000-0000</span>
-                        </li>-->
+              <!-- <li>
+                <img src="/img/phone-icon.png" />
+                <span class="body1">(00) 00000-0000</span>
+              </li> -->
               <li>
                 <a target="_blank" href="https://www.instagram.com/calligobr/">
                   <svg
@@ -257,12 +444,13 @@ import '../app/components/_deprecated/sidebar.js';
         </div>
         <div class="col-12 col-sm-6 ajc-form-container align-middle">
           <div class="ajc-form-content">
-            <div class="form-wrapper">
-              <p class="caption">
-                Estou ciente de que ao enviar este formulário, autorizo a
-                Calligo a entrar em contato por e-mail ou ser contatado(a) pelo
-                número de telefone fornecido.
-              </p>
+            <div class="form-wrapper" style="min-height:300px">
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSeRZg6TLB_UTk-lE8L_iRPJJ_GVSij-my3WXnpmHc3L9B9jAg/viewform?embedded=true"
+                width="100%"
+                height="400px">
+                Loading…
+              </iframe>
             </div>
           </div>
         </div>
@@ -293,4 +481,21 @@ import '../app/components/_deprecated/sidebar.js';
       </div>
     </div>
   </div>
-</Defaultlayout>
+  <script is:inline src="/public/js/help.js"></script>
+  <script>
+    function createMailtoLink() {
+      var user = 'contato';
+      var domain = 'calligo';
+      var tld = 'com.br';
+      var emailAddress = user + '@' + domain + '.' + tld;
+
+      var emailLink = document.createElement('a');
+      emailLink.href = 'mailto:' + emailAddress;
+      emailLink.innerText = emailAddress;
+
+      document.getElementById('email-placeholder').appendChild(emailLink);
+    }
+
+    createMailtoLink();
+  </script>
+</DefaultLayout>

@@ -2,23 +2,21 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import ImgAsset from '../components/ImgAsset.astro';
+
 import VideoModal from '../components/VideoModal.astro';
 import ModalOpener from '../components/ModalOpener.astro';
 
 import '../styles/pages/index.scss';
 
 const videoModalId = 'videomodal';
-const searchUrl = import.meta.env.SEARCH_URL;
-const loginUrl = import.meta.env.LOGIN_URL;
 const signupUrl = import.meta.env.SIGNUP_URL;
+const searchUrl = import.meta.env.SEARCH_URL;
 ---
 
 <DefaultLayout id="home" title="Home">
   <script>
     import sliders from '../app/components/slider/slider';
     sliders.init();
-
-    // import videoModal from '../app/components/video-modal/video-modal';
   </script>
   <main class="main">
     <div id="intro-calligo" class="container-fluid component" cp-name="sliders">
@@ -359,7 +357,10 @@ const signupUrl = import.meta.env.SIGNUP_URL;
       <p class="subtitle1">
         Encontre aqui o Psicólogo que pode ajudar a transformar sua vida.
       </p>
-      <form method="get" accept-charset="utf-8" action="/search">
+      <a href={searchUrl}>
+        <button class="btn btn-bold btn-light">Buscar</button>
+      </a>
+      <!-- <form method="get" accept-charset="utf-8" action="/search">
         <input
           class="form-control"
           type="text"
@@ -369,12 +370,9 @@ const signupUrl = import.meta.env.SIGNUP_URL;
         />
         <span class="search-icon material-icons-outlined">search</span>
         <button class="btn btn-bold btn-light" type="submit">Buscar</button>
-      </form>
+      </form> -->
     </div>
   </main>
 
-  <VideoModal
-    id={videoModalId}
-    url="/public/videos/calligo_final_posterize.mp4"
-  />
+  <VideoModal id={videoModalId} file="calligo_final_posterize.mp4" />
 </DefaultLayout>
