@@ -16,10 +16,11 @@ interface Props {
 const { file, type } = Astro.props;
 // const video = import.meta.glob('../videos/*.*');
 
-const video = await Astro.glob('../videos/*.*').then((files) => {
-  return files.map((file) => file.default);
-});
+// const video = await Astro.glob('../videos/*.*').then((files) => {
+//   return files.map((file) => file.default);
+// });
 
+const video = file
 const id = Astro.props.id ?? nextId('modals');
 ---
 
@@ -52,7 +53,7 @@ const id = Astro.props.id ?? nextId('modals');
 
 <Modal {id}>
   <video controls>
-    <source src={video[0]} type={type || 'video/mp4'} />
+    <source src={video} type={type || 'video/mp4'} />
      Seu navegador não suporta vídeos HTML5.
   </video>
 </Modal>
