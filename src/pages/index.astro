@@ -84,7 +84,9 @@ const searchUrl = import.meta.env.SEARCH_URL;
                   profissional independente e ideal para te ouvir.
                 </p>
                 <br />
-                <a href="/" class="btn btn-bold btn-primary">Quero evoluir!</a>
+                <a href={searchUrl} class="btn btn-bold btn-primary">
+                  Quero evoluir!
+                </a>
               </div>
             </div>
           </div>
@@ -357,9 +359,12 @@ const searchUrl = import.meta.env.SEARCH_URL;
       <p class="subtitle1">
         Encontre aqui o Psicólogo que pode ajudar a transformar sua vida.
       </p>
-      <a href={searchUrl}>
-        <button class="btn btn-bold btn-light">Buscar</button>
-      </a>
+      <div class="text-center">
+        <a href={searchUrl}>
+          <button class="btn btn-bold btn-light">Buscar</button>
+        </a>
+      </div>
+
       <!-- <form method="get" accept-charset="utf-8" action="/search">
         <input
           class="form-control"
@@ -374,5 +379,8 @@ const searchUrl = import.meta.env.SEARCH_URL;
     </div>
   </main>
 
-  <VideoModal id={videoModalId} file="https://r2.calligo.com.br/calligo_final_posterize.mp4" />
+  <VideoModal
+    id={videoModalId}
+    file="https://r2.calligo.com.br/calligo_final_posterize.mp4"
+  />
 </DefaultLayout>
