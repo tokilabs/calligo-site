@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.0.3",
     "@sentry/astro": "^7.86.0",
     "@spotlightjs/astro": "^1.0.2",
+    "@supabase/supabase-js": "^2.39.1",
     "@tokilabs/lang": "^1.0.7",
     "@vitest/coverage-istanbul": "^1.1.0",
     "astro": "^4.0.1",

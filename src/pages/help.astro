@@ -444,44 +444,94 @@ const signupUrl = import.meta.env.SIGNUP_URL;
         </div>
         <div class="col-12 col-sm-6 ajc-form-container align-middle">
           <div class="ajc-form-content">
-            <div class="form-wrapper" style="min-height:300px">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLSeRZg6TLB_UTk-lE8L_iRPJJ_GVSij-my3WXnpmHc3L9B9jAg/viewform?embedded=true"
-                width="100%"
-                height="400px">
-                Loading…
-              </iframe>
+            <div class="form-wrapper">
+              <form id="contact-form">
+                <div class="form-outline">
+                  <input
+                    placeholder="Nome Completo"
+                    class="form-control"
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="form-outline">
+                  <input
+                    placeholder="E-mail"
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="form-outline">
+                  <input
+                    placeholder="Telefone"
+                    class="form-control"
+                    type="telephone"
+                    id="telephone"
+                    name="telephone"
+                    required
+                  />
+                </div>
+                <div class="form-outline">
+                  <textarea
+                    placeholder="Escreva sua mensagem"
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    required>
+                  </textarea>
+                </div>
+                <button class="btn btn-primary text-center" type="submit">
+                  Enviar
+                </button>
+              </form>
+              <script>
+                import { createClient } from '@supabase/supabase-js';
+                const supabaseUrl = 'https://hidmagakjcjebjtmyxhs.supabase.co';
+                const supabaseKey =
+                  process.env.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                    .eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpZG1hZ2FramNqZWJqdG15eGhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDM4MTIzNzAsImV4cCI6MjAxOTM4ODM3MH0
+                    .PyjbIEGeVz8AUWScHLMP06k4AcGpteabzK8mznG0prc;
+                const supabase = createClient(supabaseUrl, supabaseKey);
+
+                const form = document.querySelector('#contact-form');
+                form.addEventListener('submit', async function (e) {
+                  e.preventDefault();
+                  const name = document.querySelector('#name').value;
+                  const email = document.querySelector('#email').value;
+                  const telephone = document.querySelector('#telephone').value;
+                  const message = document.querySelector('#message').value;
+
+                  const { data, error } = await supabase
+                    .from('contact_messages')
+                    .insert([
+                      {
+                        name: name,
+                        email: email,
+                        telephone: telephone,
+                        message: message,
+                      },
+                    ]);
+
+                  if (error) {
+                    console.log('Ocorreu um erro:', error.message);
+                  } else {
+                    console.log('Mensagem enviada:', data);
+                    // Aqui você pode limpar o formulário ou exibir uma mensagem de confirmação
+                  }
+                });
+              </script>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div
-    class="modal fade modal_confirmacao-newsletter"
-    id="modal_confirmacao-newsletter"
-    tabindex="-1"
-    aria-labelledby="modal_confirmacao"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <p class="h5 text-center">Mensagem enviada com sucesso!</p>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body">
-          <p class="body1"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script is:inline src="/public/js/help.js"></script>
+  <script src="../assets/js/help.js"></script>
   <script>
     function createMailtoLink() {
       var user = 'contato';
