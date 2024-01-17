@@ -10,8 +10,6 @@ import '../styles/pages/index.scss';
 import '../sharetribe/custom-style.css';
 
 const videoModalId = 'videomodal';
-const signupUrl = import.meta.env.SIGNUP_URL;
-const searchUrl = import.meta.env.SEARCH_URL;
 ---
 
 <DefaultLayout id="home" title="Home">
@@ -50,7 +48,7 @@ const searchUrl = import.meta.env.SEARCH_URL;
                   profissional através dos serviços customizados da Calligo.
                 </p>
                 <br />
-                <a href={signupUrl} class="btn btn-bold btn-primary">
+                <a href="/signup" class="btn btn-bold btn-primary">
                   Quero transformar!
                 </a>
               </div>
@@ -86,9 +84,7 @@ const searchUrl = import.meta.env.SEARCH_URL;
                   profissional independente e ideal para te ouvir.
                 </p>
                 <br />
-                <a href={searchUrl} class="btn btn-bold btn-primary">
-                  Quero evoluir!
-                </a>
+                <a href="/s" class="btn btn-bold btn-primary">Quero evoluir!</a>
               </div>
             </div>
           </div>
@@ -362,7 +358,7 @@ const searchUrl = import.meta.env.SEARCH_URL;
         Encontre aqui o Psicólogo que pode ajudar a transformar sua vida.
       </p>
       <div class="text-center">
-        <a href={searchUrl}>
+        <a href="/s">
           <button class="btn btn-bold btn-light">Buscar</button>
         </a>
       </div>

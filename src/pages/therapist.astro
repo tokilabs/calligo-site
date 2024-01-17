@@ -3,8 +3,6 @@ import Defaultlayout from '../layouts/DefaultLayout.astro';
 
 import ImgAsset from '../components/ImgAsset.astro';
 import '../styles/pages/index.scss';
-
-const signupUrl = import.meta.env.SIGNUP_URL;
 ---
 
 <Defaultlayout id="therapist" title="Therapist">
@@ -82,9 +80,7 @@ const signupUrl = import.meta.env.SIGNUP_URL;
               mensalidade!
             </p>
             <br /><br class="desktop" />
-            <a href={signupUrl} class="btn btn-bold btn-primary">
-              Seja calligo!
-            </a>
+            <a href="/signup" class="btn btn-bold btn-primary">Seja calligo!</a>
           </div>
         </div>
       </div>
@@ -201,7 +197,7 @@ const signupUrl = import.meta.env.SIGNUP_URL;
             evidências.
           </p>
           <br />
-          <a href={signupUrl} class="btn btn-bold btn-primary">Seja calligo!</a>
+          <a href="/signup" class="btn btn-bold btn-primary">Seja calligo!</a>
         </div>
         <div class="col-md-4 col-xl-5 offset-md-1 offset-xl-0 desktop">
           <ImgAsset file="ilustracao-2.png" class="for-whom-ilustration" />
