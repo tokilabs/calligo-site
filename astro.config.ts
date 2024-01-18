@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -17,4 +18,5 @@ export default defineConfig({
   publicDir: './pubic',
   // base: '',
   integrations: [/*sentry(), spotlightjs()*/ sitemap(), astroImageTools],
+  adapter: cloudflare(),
 });
