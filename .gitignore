@@ -23,7 +23,6 @@ dist/
 .out
 .vite/
 .vitepress/
-public/
 *.tsbuildinfo
 build
 coverage/
