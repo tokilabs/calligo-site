@@ -16,6 +16,7 @@ export default defineConfig({
   site: 'http://preview.calligo.com.br',
   srcDir: './src',
   publicDir: './pubic',
+  output: 'hybrid',
   // base: '',
   integrations: [/*sentry(), spotlightjs()*/ sitemap(), astroImageTools],
   adapter: cloudflare(),
