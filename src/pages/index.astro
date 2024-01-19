@@ -7,13 +7,11 @@ import VideoModal from '../components/VideoModal.astro';
 import ModalOpener from '../components/ModalOpener.astro';
 
 import '../styles/pages/index.scss';
-import '../sharetribe/custom-style.css';
 
 const videoModalId = 'videomodal';
 ---
 
 <DefaultLayout id="home" title="Home">
-  <script src="../sharetribe/custom-script.js"></script>
   <script>
     import sliders from '../app/components/slider/slider';
     sliders.init();

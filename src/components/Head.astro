@@ -1,6 +1,6 @@
 ---
 import '../styles/app/main.scss';
-import '../sharetribe/custom-fonts.css'
+
 interface Props {
   title: string;
   description?: string;
@@ -13,7 +13,7 @@ const { title, description } = Astro.props;
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="format-detection" content="telephone=no" />
-  <link href="/public/favicon.png" type="image/x-icon" rel="icon" />
+  <link href="/favicon.png" type="image/x-icon" rel="icon" />
 
   <title>{title ? `${title} - Calligo` : 'Calligo'}</title>
   <meta name="description" content={description} />
@@ -24,13 +24,13 @@ const { title, description } = Astro.props;
   TODO: Check if all fonts are used
   -->
   <!-- <link
-    href="../sharetribe/custom-fonts.css"
+    href="/sharetribe/custom-fonts.css"
     rel="stylesheet"
   /> -->
-  <scrip
+  <script
     src="https://kit.fontawesome.com/491335a88c.js"
-    crossorigin="anonymous">
-  </scrip>
+    crossorigin="anonymous"
+  ></script>
   <script>
     import jQuery from 'jquery';
     // Needed for Bootstrap 5 events to work
