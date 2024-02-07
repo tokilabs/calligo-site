@@ -5,7 +5,9 @@
     "esModuleInterop": true,
     "types": [
       "vitest/importMeta"
-    ]
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "include": [
     "./src/env.d.ts"
