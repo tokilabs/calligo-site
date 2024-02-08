@@ -1,0 +1,3 @@
+[submodule "src/sharetrib"]
+	path = src/sharetrib
+	url = https://github.com/tokilabs/calligo-sharetribe-web-template.git
