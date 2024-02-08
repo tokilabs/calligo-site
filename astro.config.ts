@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
 
 // Sentry imports
@@ -10,11 +9,13 @@ import sitemap from '@astrojs/sitemap';
 // @ts-expect-error Typings are wrong :/
 import { astroImageTools } from 'astro-imagetools';
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'http://preview.calligo.com.br',
   srcDir: './src',
   publicDir: './pubic',
   // base: '',
-  integrations: [/*sentry(), spotlightjs()*/ sitemap(), astroImageTools],
+  integrations: [/*sentry(), spotlightjs()*/sitemap(), astroImageTools, react()]
 });
