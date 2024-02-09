@@ -8,10 +8,10 @@ import sitemap from '@astrojs/sitemap';
 
 // @ts-expect-error Typings are wrong :/
 import { astroImageTools } from 'astro-imagetools';
-import react from "@astrojs/react";
+import react from '@astrojs/react';
 
-import tailwind from "@astrojs/tailwind";
-import mdx from "@astrojs/mdx";
+import tailwind from '@astrojs/tailwind';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,5 +19,11 @@ export default defineConfig({
   srcDir: './src',
   publicDir: './pubic',
   // base: '',
-  integrations: [/*sentry(), spotlightjs()*/sitemap(), astroImageTools, react(), tailwind(), mdx()]
+  integrations: [
+    /*sentry(), spotlightjs()*/ sitemap(),
+    astroImageTools,
+    react(),
+    tailwind(),
+    mdx(),
+  ],
 });
