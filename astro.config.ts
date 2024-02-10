@@ -13,11 +13,12 @@ import { astroImageTools } from 'astro-imagetools';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://preview.calligo.com.br',
+  site: 'http://www.calligo.com.br',
   srcDir: './src',
   publicDir: './public',
-  output: 'hybrid',
+  output: 'static',
+  outDir: '../src/site',
   // base: '',
   integrations: [/*sentry(), spotlightjs()*/ sitemap(), astroImageTools],
-  adapter: cloudflare(),
+  // adapter: cloudflare(),
 });
