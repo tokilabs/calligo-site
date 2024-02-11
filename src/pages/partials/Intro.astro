@@ -1,0 +1,122 @@
+---
+export const partial = true;
+
+import ImgAsset from '../../components/ImgAsset.astro';
+import ModalOpener from '../../components/ModalOpener.astro';
+
+import '../../styles/pages/index.scss';
+
+const videoModalId = 'videomodal';
+---
+
+<div id="intro-calligo" class="container-fluid component" cp-name="sliders">
+  <div class="intro-slider">
+    <div>
+      <div class="intro-text w-100 w-sm-50">
+        <div class="row">
+          <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+            <ImgAsset
+              class="brandname desktop"
+              file="brandname.png"
+              alt="Calligo."
+            />
+            <ImgAsset
+              class="brandname mobile"
+              file="brandname-mobile.png"
+              alt="Calligo."
+            />
+            <h1 class="text-start mobile-centered">
+              Ambiente de transformação <br />e evolução!
+            </h1>
+            <p class="subtitle1 mobile-centered">
+              Evolua a sua prática e cuide melhor dos seus pacientes, de
+              qualquer lugar e em segurança. Conteúdos exclusivos e inéditos no
+              Brasil para você, Terapeuta.
+              <br />
+               Quer desenvolver seu consultório virtual? Amplie seu alcance
+              profissional através dos serviços customizados da Calligo.
+            </p>
+            <br />
+            <a href="/signup" class="btn btn-bold btn-primary">
+              Quero transformar!
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <ImgAsset
+        class="slider-image desktop"
+        file="home-banner-1.png"
+        alt="Home banner"
+      />
+    </div>
+
+    <div>
+      <div class="intro-text w-100 w-sm-50">
+        <div class="row">
+          <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+            <ImgAsset
+              class="brandname desktop"
+              file="brandname.png"
+              alt="Calligo."
+            />
+            <ImgAsset
+              class="brandname mobile"
+              file="brandname-mobile.png"
+              alt="Calligo."
+            />
+            <h1 class="text-start mobile-centered">Evolua</h1>
+            <p class="subtitle1 mobile-centered">
+              Autoconhecimento na palma da sua mão. <br />
+               Dê o primeiro passo para a sua transformação. Encontre um
+              profissional independente e ideal para te ouvir.
+            </p>
+            <br />
+            <a href="/s" class="btn btn-bold btn-primary">Quero evoluir!</a>
+          </div>
+        </div>
+      </div>
+
+      <ImgAsset file="home-banner-1.png" class="slider-image desktop" />
+    </div>
+
+    <div>
+      <div class="intro-text w-100 w-sm-50">
+        <div class="row">
+          <div class="col-md-5 col-xl-5 offset-md-1 text-start mobile-centered">
+            <ImgAsset
+              class="brandname desktop"
+              file="brandname.png"
+              alt="Calligo."
+            />
+            <ImgAsset
+              class="brandname mobile"
+              file="brandname-mobile.png"
+              alt="Calligo."
+            />
+            <br /><br />
+            <p class="subtitle1 mobile-centered">
+              Para transformar com nosso bater de asas e causar o efeito
+              borboleta, contamos com cada pessoa alcançada. A Calligo quer
+              tornar o acesso à saúde mental uma realidade de todos.
+            </p>
+            <br />
+
+            <ModalOpener target={videoModalId}>
+              <ImgAsset file="play.png" /> Assista o vídeo
+            </ModalOpener>
+          </div>
+        </div>
+      </div>
+
+      <ImgAsset file="home-banner-2.png" class="slider-image desktop" />
+    </div>
+  </div>
+
+  <div class="intro-image mobile">
+    <ImgAsset file="intro-image-mobile.png" class="slider-image" />
+  </div>
+  <a class="help-button" href="/help">
+    <ImgAsset file="ajuda.png" />
+  </a>
+</div>
