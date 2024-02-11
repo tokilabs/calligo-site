@@ -17,7 +17,7 @@ export default defineConfig({
   srcDir: './src',
   publicDir: './public',
   output: 'static',
-  outDir: '../calligo-sharetribe-web-template/src/site',
+  outDir: 'dist',
   // base: '',
   integrations: [/*sentry(), spotlightjs()*/ sitemap(), astroImageTools],
   // adapter: cloudflare(),
